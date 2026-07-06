@@ -1,0 +1,278 @@
+/*==========================
+NAVBAR
+==========================*/
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    height: 72px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .05);
+
+}
+
+/*==========================
+LOGO
+==========================*/
+
+.logo a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+}
+.logo-icon{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    color:#fff;
+
+    font-size:18px;   /* was 20px */
+
+    flex-shrink:0;
+
+}
+
+.logo-text{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    line-height:1;
+
+    white-space:nowrap;
+
+}
+.logo{
+
+    flex-shrink:0;
+
+}
+
+/*==========================
+MENU
+==========================*/
+
+.menu {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+.menu a {
+
+    text-decoration: none;
+
+    color: #4b5563;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    transition: .25s;
+
+}
+
+.menu a:hover {
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+}
+
+.menu a.active,
+.menu a[aria-current="page"] {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+/*==========================
+RIGHT
+==========================*/
+
+.right-section {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+/*==========================
+INFO CARD
+==========================*/
+
+.info-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 8px 14px;
+
+    min-width: 95px;
+
+}
+
+.label {
+
+    font-size: 11px;
+
+    color: #6b7280;
+
+}
+
+.value {
+
+    margin-top: 3px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+}
+
+.points {
+
+    border-left: 4px solid #2563eb;
+
+}
+
+.wallet {
+
+    border-left: 4px solid #16a34a;
+
+}
+
+/*==========================
+LOGOUT
+==========================*/
+
+.logout-btn {
+
+    border: none;
+
+    background: #ef4444;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+.logout-btn:hover {
+
+    background: #dc2626;
+
+    transform: translateY(-2px);
+
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:1200px) {
+
+    .menu {
+
+        display: none;
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .navbar {
+
+        padding: 0 16px;
+
+        height: auto;
+
+        min-height: 72px;
+
+    }
+
+    .logo-text {
+
+        font-size: 20px;
+
+    }
+
+    .info-card {
+
+        display: none;
+
+    }
+
+}

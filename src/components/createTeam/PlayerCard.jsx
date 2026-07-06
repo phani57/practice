@@ -72,9 +72,13 @@ function PlayerCard({ player }) {
 
     return (
 
-        <div>
+        <div
 
-            <label>
+            className={`player-card ${selected ? "selected" : ""}`}
+
+        >
+
+            <div className="player-left">
 
                 <input
 
@@ -88,17 +92,43 @@ function PlayerCard({ player }) {
 
                 />
 
-                {player.player_name}
+            </div>
 
-            </label>
+            <div className="player-info">
+
+                <div className="player-name">
+
+                    🏏 {player.player_name}
+
+                </div>
+
+                <div className="player-details">
+
+                    <span>
+
+                        {player.country}
+
+                    </span>
+
+                    <span>
+
+                        ₹{player.player_price}
+
+                    </span>
+
+                </div>
+
+            </div>
 
             {
 
                 selected &&
 
-                <div>
+                <div className="player-actions">
 
                     <button
+
+                        className="captain-btn"
 
                         onClick={() =>
 
@@ -116,15 +146,21 @@ function PlayerCard({ player }) {
 
                             captain?.id === player.id
 
-                                ? "⭐ Captain"
+                                ?
 
-                                : "Captain"
+                                "⭐ Captain"
+
+                                :
+
+                                "Captain"
 
                         }
 
                     </button>
 
                     <button
+
+                        className="vc-btn"
 
                         onClick={() =>
 
@@ -142,9 +178,13 @@ function PlayerCard({ player }) {
 
                             viceCaptain?.id === player.id
 
-                                ? "🥈 Vice"
+                                ?
 
-                                : "Vice"
+                                "🥈 Vice"
+
+                                :
+
+                                "Vice"
 
                         }
 

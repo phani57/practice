@@ -1,0 +1,174 @@
+.tournaments-container{
+
+    padding:30px;
+
+    background:#f5f7fb;
+
+    min-height:100vh;
+
+}
+
+/* HERO */
+
+.hero-banner{
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    border-radius:22px;
+
+    color:white;
+
+    padding:30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    box-shadow:0 18px 35px rgba(37,99,235,.2);
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.2);
+
+    margin-bottom:12px;
+
+    font-size:13px;
+
+}
+
+.hero-banner h1{
+
+    margin:0;
+
+    font-size:36px;
+
+}
+
+.hero-banner p{
+
+    margin-top:12px;
+
+    opacity:.9;
+
+}
+
+.hero-icon{
+
+    font-size:70px;
+
+}
+
+.tournaments-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:24px;
+
+}
+
+@media(max-width:768px){
+
+.hero-banner{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.hero-icon{
+
+display:none;
+
+}
+
+}
+.page-header{
+
+    margin-bottom:22px;
+
+}
+
+.page-header h1{
+
+    margin:0;
+
+    font-size:34px;
+
+    color:#111827;
+
+}
+
+.page-header p{
+
+    margin-top:8px;
+
+    color:#6b7280;
+
+}
+
+.header-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin-bottom:30px;
+
+}
+
+.mini-card{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.06);
+
+}
+
+.mini-card span{
+
+    font-size:32px;
+
+}
+
+.mini-card h3{
+
+    margin:0;
+
+    color:#111827;
+
+}
+
+.mini-card small{
+
+    color:#6b7280;
+
+}

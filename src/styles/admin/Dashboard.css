@@ -1,0 +1,369 @@
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard-container {
+
+    background: #0f172a;
+
+    color: white;
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+
+    margin-bottom: 32px;
+}
+
+.page-subtitle {
+
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.dashboard-title {
+
+    margin-top: 8px;
+
+    color: white;
+
+    font-size: 34px;
+
+    font-weight: 700;
+}
+
+/* =========================================
+   STATS GRID
+========================================= */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 22px;
+
+    margin-bottom: 35px;
+}
+
+/* =========================================
+   STAT CARD
+========================================= */
+
+.stat-card {
+
+    background: #111827;
+
+    border: 1px solid #334155;
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+
+}
+
+.stat-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #6366f1;
+
+    box-shadow: 0 14px 30px rgba(0,0,0,.35);
+
+}
+
+.stat-card:active {
+
+    transform: scale(.98);
+
+}
+
+.stat-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.stat-header span:first-child {
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.stat-icon {
+
+    font-size: 22px;
+}
+
+.stat-card h2 {
+
+    margin: 22px 0 10px;
+
+    font-size: 40px;
+
+    color: white;
+
+    font-weight: 700;
+}
+
+.stat-card small {
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+/* =========================================
+   MATCH SECTION
+========================================= */
+
+.match-section {
+
+    background: #111827;
+
+    border: 1px solid #334155;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    margin-top: 30px;
+}
+
+.section-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid #334155;
+}
+
+.section-header h2 {
+
+    margin: 0;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    color: white;
+}
+
+/* =========================================
+   MATCH CARD
+========================================= */
+
+.match-card {
+
+    background: #1e293b;
+
+    border: 1px solid #334155;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    margin-bottom: 16px;
+
+    transition: .25s;
+}
+
+.match-card:last-child {
+
+    margin-bottom: 0;
+}
+
+.match-card:hover {
+
+    border-color: #6366f1;
+
+    background: #243447;
+
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   MATCH HEADER
+========================================= */
+
+.match-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.match-top h3 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+.vs {
+
+    color: #94a3b8;
+
+    margin: 0 8px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+/* =========================================
+   DATE
+========================================= */
+
+.match-date {
+
+    margin-top: 12px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+/* =========================================
+   LIVE BADGE
+========================================= */
+
+.live-badge {
+
+    background: #16a34a;
+
+    color: white;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-state {
+
+    padding: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #64748b;
+
+    border: 2px dashed #334155;
+
+    border-radius: 14px;
+
+    font-size: 15px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width:1200px){
+
+    .stats-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:700px){
+
+    .dashboard-container{
+
+        padding:18px;
+
+    }
+
+    .dashboard-title{
+
+        font-size:28px;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .match-top{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+    .section-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+    }
+
+    .stat-card h2{
+
+        font-size:34px;
+
+    }
+
+}

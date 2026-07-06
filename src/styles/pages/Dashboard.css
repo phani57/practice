@@ -1,0 +1,502 @@
+/*=========================
+BACKGROUND
+=========================*/
+
+.dashboard-container{
+
+    padding:30px;
+
+    background:#f4f7fb;
+
+    min-height:100vh;
+
+}
+
+
+/* ====================================
+   HERO
+==================================== */
+
+.hero-banner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    background:linear-gradient(135deg,#3165d6,#4b44c9);
+
+    color:white;
+
+    margin-bottom:28px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.hero-banner::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    right:-70px;
+
+    top:-70px;
+
+}
+
+.hero-content{
+
+    z-index:2;
+
+}
+
+.welcome-text{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.18);
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    margin-bottom:12px;
+
+}
+
+.hero-banner h1{
+
+    margin:0;
+
+    font-size:38px;
+
+    font-weight:700;
+
+}
+
+.hero-banner p{
+
+    margin-top:12px;
+
+    font-size:16px;
+
+    opacity:.9;
+
+}
+
+.hero-trophy{
+
+    font-size:90px;
+
+    z-index:2;
+
+}
+
+/* ====================================
+   STATS
+==================================== */
+
+.stats-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+
+    margin-bottom:35px;
+
+}
+
+.stat-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    background:white;
+
+    padding:24px;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 35px rgba(37,99,235,.15);
+
+}
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:6px;
+
+    height:100%;
+
+}
+
+.teams::before{
+
+    background:#2563eb;
+
+}
+
+.matches::before{
+
+    background:#10b981;
+
+}
+
+.rank::before{
+
+    background:#f59e0b;
+
+}
+
+.stat-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    background:#eef4ff;
+
+}
+
+.matches .stat-icon{
+
+    background:#ecfdf5;
+
+}
+
+.rank .stat-icon{
+
+    background:#fff7ed;
+
+}
+
+.stat-title{
+
+    color:#6b7280;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.stat-card h2{
+
+    margin:8px 0 5px;
+
+    font-size:34px;
+
+    color:#111827;
+
+}
+
+.stat-card small{
+
+    color:#9ca3af;
+
+}
+
+/*=========================
+SECTION
+=========================*/
+
+.section-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    margin-bottom:24px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.section-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+    color:#111827;
+
+}
+
+/*=========================
+MATCH CARD
+=========================*/
+
+.match-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 22px;
+
+    border-radius:14px;
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    margin-bottom:15px;
+
+    transition:.3s;
+
+}
+
+.match-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.08);
+
+}
+
+.team{
+
+    width:35%;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.match-middle{
+
+    width:30%;
+
+    text-align:center;
+
+}
+
+.live-badge{
+
+    background:#16a34a;
+
+    color:white;
+
+    padding:7px 18px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+.vs{
+
+    font-weight:700;
+
+    color:#2563eb;
+
+    margin-bottom:6px;
+
+}
+
+.match-middle small{
+
+    color:#6b7280;
+
+}
+
+/*=========================
+EMPTY
+=========================*/
+
+.empty-card{
+
+    text-align:center;
+
+    padding:40px;
+
+    color:#94a3b8;
+
+    border:2px dashed #d1d5db;
+
+    border-radius:12px;
+
+}
+
+/*=========================
+MESSAGE
+=========================*/
+
+.alert-card,
+.loading-card{
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
+
+}
+
+.alert-card{
+
+    border-left:5px solid #ef4444;
+
+}
+/* ===========================================
+   HERO RESPONSIVE
+=========================================== */
+
+@media (max-width:900px){
+
+.hero-card{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.hero-icon{
+
+display:none;
+
+}
+
+}
+
+/* ===========================================
+   STATS
+=========================================== */
+
+@media (max-width:900px){
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* ===========================================
+   MATCHES
+=========================================== */
+
+.upcoming{
+
+background:#ffffff;
+
+}
+
+.upcoming:hover{
+
+background:#f8fbff;
+
+}
+
+.team:first-child{
+
+text-align:left;
+
+}
+
+.team:last-child{
+
+text-align:right;
+
+}
+
+.match-card:last-child{
+
+margin-bottom:0;
+
+}
+
+/* ===========================================
+   SECTION HEADER
+=========================================== */
+
+.section-title{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding-bottom:14px;
+
+border-bottom:1px solid #eef2f7;
+
+margin-bottom:18px;
+
+}

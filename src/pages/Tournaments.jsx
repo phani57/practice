@@ -1,3 +1,4 @@
+import "../styles/pages/Tournaments.css";
 import  { useState, useEffect } from "react";
 import TournamentCard from "../components/TournamentCard";
 import tournamentService from "../services/tournamentService";

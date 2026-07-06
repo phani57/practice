@@ -1,5 +1,5 @@
+import "../styles/pages/Profile.css";
 import { useEffect, useState } from "react";
-
 import profileService from "../services/profileService";
 
 function Profile() {
@@ -7,12 +7,12 @@ function Profile() {
     const [profile, setProfile] = useState(null);
 
     useEffect(() => {
+
         async function loadProfile() {
 
             try {
 
-                const data =
-                    await profileService.getProfile();
+                const data = await profileService.getProfile();
 
                 setProfile(data);
 
@@ -30,85 +30,82 @@ function Profile() {
 
     }, []);
 
+    if (!profile) {
 
+        return null;
+
+    }
 
     return (
 
         <>
 
-            {
 
-                profile && (
+            <div className="profile-container">
 
-                    <div className="profile-container">
+                <div className="profile-card">
 
-                        <div className="profile-card">
+                    <div className="profile-header">
 
-                            <div className="profile-header">
+                        <div className="profile-avatar">
 
-                                <div className="profile-avatar">
+                            {profile.name.charAt(0).toUpperCase()}
 
-                                    {profile.name.charAt(0).toUpperCase()}
+                        </div>
 
-                                </div>
+                        <h2>
 
-                                <h2>
+                            {profile.name}
 
-                                    {profile.name}
+                        </h2>
 
-                                </h2>
+                        <p>
 
-                                <p>
+                            {profile.email}
 
-                                    {profile.email}
+                        </p>
 
-                                </p>
+                    </div>
 
-                            </div>
+                    <div className="profile-stats-grid">
 
-                            <div className="stats-grid">
+                        <div className="profile-stat-card">
 
-                                <div className="stat-card">
+                            <h3>
 
-                                    <h3>
+                                Fantasy Points
 
-                                        Fantasy Points
+                            </h3>
 
-                                    </h3>
+                            <p>
 
-                                    <p>
+                                🏆 {profile.fantasy_points}
 
-                                        {profile.fantasy_points}
+                            </p>
 
-                                    </p>
+                        </div>
 
-                                </div>
+                        <div className="profile-stat-card">
 
-                                <div className="stat-card">
+                            <h3>
 
-                                    <h3>
+                                Wallet Balance
 
-                                        Wallet Balance
+                            </h3>
 
-                                    </h3>
+                            <p>
 
-                                    <p>
+                                ₹{profile.wallet_balance}
 
-                                        ₹{profile.wallet_balance}
-
-                                    </p>
-
-                                </div>
-
-                            </div>
+                            </p>
 
                         </div>
 
                     </div>
 
-                )
+                </div>
 
-            }
+            </div>
 
         </>
 

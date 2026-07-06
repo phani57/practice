@@ -1,7 +1,10 @@
+import "../styles/pages/MyTeams.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TeamCard from "../components/MyTeamsCard";
 
+import { useDispatch } from "react-redux";
+import { setEditingTeam } from "../redux/teamSlice";
 import fantasyTeamService from "../services/fantasyTeamService";
 
 function MyTeams() {
@@ -11,6 +14,8 @@ function MyTeams() {
     const [savedTeams, setSavedTeams] = useState([]);
 
     const [expandedTeamId, setExpandedTeamId] = useState(-1);
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         async function loadTeams() {
@@ -90,12 +95,11 @@ function MyTeams() {
 
         try {
 
-            const data =
-                await fantasyTeamService.getTeamForEdit(teamId);
+            const team = await fantasyTeamService.getTeamForEdit(teamId);
 
-            fantasyTeamService.editingTeam = data;
+            dispatch(setEditingTeam(team));
 
-            navigate(`/create-team/${data.match_id}`);
+            navigate(`/create-team/${team.match_id}`);
 
         }
 

@@ -1,0 +1,500 @@
+/* ===========================================
+   PAGE
+=========================================== */
+.page-container {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 24px;
+
+    background: #f4f6fb;
+
+    min-height: calc(100vh - 70px);
+
+}
+
+.page-container h1 {
+
+    margin-bottom: 6px;
+
+    color: #111827;
+
+}
+
+.match-info {
+
+    color: #64748b;
+
+    margin-bottom: 24px;
+
+}
+
+/* ===========================================
+   SUMMARY CARD
+=========================================== */
+
+.summary-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    margin-bottom: 24px;
+
+    box-shadow: none;
+
+}
+
+/* ===========================================
+   TEAM NAME
+=========================================== */
+
+.team-name-section {
+
+    margin-bottom: 20px;
+
+}
+
+.team-name-section label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #374151;
+
+}
+
+.team-name-section input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 16px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: .2s;
+
+    background: #fff;
+
+}
+
+.team-name-section input:focus {
+
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+
+}
+
+/* ===========================================
+   PROGRESS
+=========================================== */
+.progress-section {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+
+}
+
+.progress-section h2 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+}
+
+.player-count {
+
+    background: #2563eb;
+
+    color: #fff;
+
+    padding: 6px 16px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+/* ===========================================
+   LEADERSHIP
+=========================================== */
+.leadership {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+
+    margin: 18px 0;
+
+}
+
+.leader-card {
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    background: #fafafa;
+
+}
+
+.leader-card span {
+
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+}
+
+.leader-card strong {
+
+    font-size: 15px;
+
+    color: #111827;
+
+}
+
+/* ===========================================
+   SAVE BUTTON
+=========================================== */
+.save-btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #16a34a;
+
+    color: #fff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+.save-btn:hover {
+
+    background: #15803d;
+
+}
+
+/* ===========================================
+   PLAYERS GRID
+=========================================== */
+
+.players-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+}
+
+.team-column {
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    box-shadow: none;
+
+}
+
+.team-column h2 {
+
+    margin: 0 0 16px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #2563eb;
+
+    font-size: 22px;
+
+}
+
+/* ===========================================
+   PLAYER CARD
+=========================================== */
+.player-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    background: #fff;
+
+    transition: .2s;
+
+}
+
+.player-card:hover {
+
+    border-color: #2563eb;
+
+    background: #f8fbff;
+
+}
+
+.player-card.selected {
+
+    border-color: #2563eb;
+
+    background: #eff6ff;
+
+}
+
+/* ===========================================
+   PLAYER INFO
+=========================================== */
+
+.player-left {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.player-left input {
+
+    width: 20px;
+
+    height: 20px;
+
+    cursor: pointer;
+
+}
+
+.player-info {
+
+    flex: 1;
+
+}
+
+.player-name {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    margin-bottom: 6px;
+
+}
+
+.player-details {
+
+    display: flex;
+
+    gap: 18px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+/* ===========================================
+   ACTION BUTTONS
+=========================================== */
+
+.player-actions {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+.player-actions button {
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+
+    padding: 7px 12px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: .2s;
+
+}
+
+.captain-btn {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+.captain-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+.vc-btn {
+
+    background: #7c3aed;
+
+    color: white;
+
+}
+
+.vc-btn:hover {
+
+    background: #6d28d9;
+
+}
+
+/* ===========================================
+   MESSAGES
+=========================================== */
+
+.error-message {
+
+    margin: 18px 0;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    font-weight: 600;
+
+}
+
+.success-message {
+
+    margin: 18px 0;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    font-weight: 600;
+
+}
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+
+@media(max-width:1000px) {
+
+    .players-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .leadership {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .page-container {
+
+        padding: 18px;
+
+    }
+
+    .summary-card {
+
+        position: static;
+
+    }
+
+    .progress-section {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;

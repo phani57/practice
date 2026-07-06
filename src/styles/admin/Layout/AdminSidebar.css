@@ -1,0 +1,169 @@
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:260px;
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:20px;
+
+    background:#111827;
+
+    border-right:1px solid #334155;
+
+    overflow:hidden;
+
+    z-index:1000;
+
+    box-sizing:border-box;
+
+}
+/* ==========================
+   LOGO
+========================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #1f2937;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 12px;
+
+    background: #2563eb;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+}
+
+.logo h2 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.logo p {
+    margin-top: 4px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+nav{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow-y:auto;
+
+    scrollbar-width:none;
+
+}
+nav::-webkit-scrollbar {
+    display: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: background .2s ease,
+                color .2s ease;
+}
+
+nav a:hover {
+    background: #1f2937;
+    color: white;
+}
+
+nav a.active {
+    background: #2563eb;
+    color: white;
+
+    font-weight: 600;
+}
+
+/* ==========================
+   BOTTOM MENU
+========================== */
+
+.bottom-menu {
+    margin-top: auto;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #1f2937;
+}
+
+.bottom-menu a {
+    background: rgba(239,68,68,.08);
+
+    color: #fca5a5;
+}
+
+.bottom-menu a:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 992px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+}

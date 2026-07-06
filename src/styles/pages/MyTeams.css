@@ -1,0 +1,425 @@
+/* ===========================
+   PAGE
+=========================== */
+
+.teams-container {
+
+    padding: 28px;
+
+    background: #f5f7fb;
+
+    min-height: 100vh;
+
+}
+
+.page-header {
+
+    margin-bottom: 26px;
+
+}
+
+.page-header h1 {
+
+    margin: 0;
+
+    font-size: 30px;
+
+    color: #111827;
+
+}
+
+.page-header p {
+
+    margin-top: 6px;
+
+    color: #6b7280;
+
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.teams-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(340px, 380px));
+
+    gap: 22px;
+
+    justify-content: flex-start;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.team-card {
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    border: 1px solid #e5e7eb;
+
+    padding: 18px;
+
+    transition: .25s;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .05);
+
+}
+
+.team-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+}
+
+/* ===========================
+   TOP
+=========================== */
+
+.card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 14px;
+
+}
+
+.card-top h2 {
+
+    margin: 0;
+
+    font-size: 20px;
+
+    color: #111827;
+
+}
+
+/* ===========================
+   STATUS
+=========================== */
+
+.status {
+
+    padding: 5px 12px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+.status.upcoming {
+
+    background: #fff7ed;
+
+    color: #ea580c;
+
+}
+
+.status.live {
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+}
+
+.status.completed {
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+}
+
+/* ===========================
+   MATCH
+=========================== */
+
+.match-box {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #f8fafc;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    margin-bottom: 14px;
+
+}
+
+.team-name {
+
+    width: 40%;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #111827;
+
+}
+
+.vs {
+
+    color: #2563eb;
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+}
+
+.match-date {
+
+    margin-bottom: 16px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.actions {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+.actions button {
+
+    border: none;
+
+    padding: 9px 14px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: .2s;
+
+}
+
+.view-btn {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+.view-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+.edit-btn {
+
+    background: #10b981;
+
+    color: white;
+
+}
+
+.edit-btn:hover {
+
+    background: #059669;
+
+}
+
+.delete-btn {
+
+    background: #ef4444;
+
+    color: white;
+
+}
+
+.delete-btn:hover {
+
+    background: #dc2626;
+
+}
+
+.locked-btn {
+
+    background: #e5e7eb;
+
+    color: #6b7280;
+
+}
+
+/* ===========================
+   PLAYERS
+=========================== */
+
+.players-section {
+
+    margin-top: 18px;
+
+    border-top: 1px solid #e5e7eb;
+
+    padding-top: 16px;
+
+}
+
+.players-section h3 {
+
+    margin: 0 0 14px;
+
+    font-size: 16px;
+
+    color: #111827;
+
+}
+
+.players-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+}
+
+.player-card {
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 13px;
+
+}
+
+.badges {
+
+    display: flex;
+
+    gap: 5px;
+
+}
+
+.captain {
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 2px 7px;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+.vice {
+
+    background: #10b981;
+
+    color: white;
+
+    padding: 2px 7px;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px) {
+
+    .teams-container {
+
+        padding: 18px;
+
+    }
+
+    .teams-grid {
+
+        grid-template-columns: 1fr;
+
+        justify-content: stretch;
+
+    }
+
+    .team-card {
+
+        max-width: 100%;
+
+    }
+
+    .match-box {
+
+        padding: 12px;
+
+    }
+
+    .actions {
+
+        justify-content: center;
+
+    }
+
+    .players-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

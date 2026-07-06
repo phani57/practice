@@ -25,6 +25,28 @@ const login = async (email, password) => {
     return response.data;
 };
 
+const register = async (name, email, password) => {
+
+    const response = await axios.post(
+
+        "/register",
+
+        {
+
+            name,
+
+            email,
+
+            password
+
+        }
+
+    );
+
+    return response.data;
+
+};
+
 const logout = () => {
 
     localStorage.removeItem("token");
@@ -60,9 +82,13 @@ const clearAuth = () => {
 
 };
 
+
+
 export default {
 
     login,
+
+    register,
 
     logout,
 

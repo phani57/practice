@@ -18,7 +18,10 @@ const initialState = {
 
     errorMessage: "",
 
+    editingTeam: null,
+
 };
+
 
 const teamSlice = createSlice({
 
@@ -157,6 +160,91 @@ const teamSlice = createSlice({
 
             state.errorMessage = "";
 
+        },
+
+        setEditingTeam(state, action) {
+
+            state.editingTeam = action.payload;
+
+        },
+
+        clearEditingTeam(state) {
+
+            state.editingTeam = null;
+
+        },
+
+        loadEditingTeam(state, action) {
+
+            const team = action.payload;
+
+            state.teamName = team.team_name;
+
+            state.selectedPlayers = team.players;
+
+            state.captain = team.players.find(
+
+                player => player.pivot.is_captain === 1
+
+            ) || null;
+
+            state.viceCaptain = team.players.find(
+
+                player => player.pivot.is_vice_captain === 1
+
+            ) || null;
+
+            state.usedBudget = team.players.reduce(
+
+                (total, player) =>
+
+                    total + Number(player.player_price),
+
+                0
+
+            );
+
+            state.remainingBudget =
+
+                state.totalBudget -
+
+                state.usedBudget;
+
+        },
+
+        resetTeam(state) {
+
+            state.teamName = "";
+
+            state.selectedPlayers = [];
+
+            state.captain = null;
+
+            state.viceCaptain = null;
+
+            state.usedBudget = 0;
+
+            state.remainingBudget = 100;
+
+            state.errorMessage = "";
+
+            state.editingTeam = null;
+
+        },
+        restoreDraft(state, action) {
+
+            state.teamName = action.payload.teamName;
+
+            state.selectedPlayers = action.payload.selectedPlayers;
+
+            state.captain = action.payload.captain;
+
+            state.viceCaptain = action.payload.viceCaptain;
+
+            state.usedBudget = action.payload.usedBudget;
+
+            state.remainingBudget = action.payload.remainingBudget;
+
         }
 
     }
@@ -173,7 +261,15 @@ export const {
 
     setCaptain,
 
-    setViceCaptain
+    setViceCaptain,
+
+    setEditingTeam,
+
+    clearEditingTeam,
+
+    loadEditingTeam,
+    resetTeam,
+    restoreDraft
 
 } = teamSlice.actions;
 

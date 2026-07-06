@@ -10,13 +10,17 @@ function TeamColumn({
 
     return (
 
-        <div>
+        <div className="team-column">
 
-            <h2>{teamName}</h2>
+            <h2>
+
+                {teamName}
+
+            </h2>
 
             {
 
-                players.map((matchPlayer) => (
+                players.map(matchPlayer=>(
 
                     <PlayerCard
 

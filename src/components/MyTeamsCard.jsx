@@ -1,3 +1,4 @@
+// import "./MyTeams.css";
 function TeamCard({
 
     team,

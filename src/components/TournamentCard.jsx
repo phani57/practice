@@ -1,3 +1,4 @@
+import "../styles/components/TournamentCard.css";
 function TournamentCard({
     tournamentId,
     name,

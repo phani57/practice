@@ -1,4 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
+import "../styles/components/Navbar.css";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import authService from "../services/authService";
@@ -7,13 +8,13 @@ import authService from "../services/authService";
 function Navbar() {
 
     const navigate = useNavigate();
-    const { user,setUser } = useContext(AuthContext);
+    const { user, setUser } = useContext(AuthContext);
     async function logout() {
 
         try {
 
             await authService.logout();
-            
+
 
         }
         catch (error) {
@@ -38,7 +39,7 @@ function Navbar() {
 
             <div className="logo">
 
-                <Link to="/dashboard">
+                <NavLink to="/dashboard">
 
                     <span className="logo-icon">🏆</span>
 
@@ -46,34 +47,46 @@ function Navbar() {
                         Fantasy League
                     </span>
 
-                </Link>
+                </NavLink>
 
             </div>
-            {user && (
-    <h3>Welcome {user.name}</h3>
-)}
 
             <div className="menu">
 
-                <Link to="/dashboard">
+                <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) => isActive ? "active" : ""}
+                >
                     Dashboard
-                </Link>
+                </NavLink>
 
-                <Link to="/tournaments">
+                <NavLink
+                    to="/tournaments"
+                    className={({ isActive }) => isActive ? "active" : ""}
+                >
                     Tournaments
-                </Link>
+                </NavLink>
 
-                <Link to="/my-teams">
+                <NavLink
+                    to="/my-teams"
+                    className={({ isActive }) => isActive ? "active" : ""}
+                >
                     My Teams
-                </Link>
+                </NavLink>
 
-                <Link to="/leaderboard">
+                <NavLink
+                    to="/leaderboard"
+                    className={({ isActive }) => isActive ? "active" : ""}
+                >
                     Leaderboard
-                </Link>
+                </NavLink>
 
-                <Link to="/profile">
+                <NavLink
+                    to="/profile"
+                    className={({ isActive }) => isActive ? "active" : ""}
+                >
                     Profile
-                </Link>
+                </NavLink>
 
             </div>
 
@@ -105,6 +118,7 @@ function Navbar() {
                             </span>
 
                         </div>
+
                     </>
 
                 )}

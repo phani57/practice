@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setTeamName } from "../../redux/teamSlice";
 
-function TeamSummary() {
+function TeamSummary({ onSave }) {
 
     const dispatch = useDispatch();
 
@@ -24,11 +24,11 @@ function TeamSummary() {
 
     );
 
-    const remainingBudget = useSelector(
+    // const remainingBudget = useSelector(
 
-        state => state.team.remainingBudget
+    //     state => state.team.remainingBudget
 
-    );
+    // );
     const captain = useSelector(
 
         state => state.team.captain
@@ -43,106 +43,171 @@ function TeamSummary() {
 
     return (
 
-        <div>
+        <div className="summary-card">
 
-            <h2>Create Fantasy Team</h2>
+            <div className="team-name-section">
 
-            <input
+                <label>
 
-                type="text"
+                    📝 Fantasy Team Name
 
-                placeholder="Enter Team Name"
+                </label>
 
-                value={teamName}
+                <input
 
-                onChange={(e) =>
-                    dispatch(
-                        setTeamName(e.target.value)
-                    )
-                }
+                    type="text"
 
-            />
+                    placeholder="Enter Fantasy Team Name"
+
+                    value={teamName}
+
+                    onChange={(e) =>
+
+                        dispatch(
+
+                            setTeamName(e.target.value)
+
+                        )
+
+                    }
+
+                />
+
+            </div>
+
+            <div className="budget-card">
+
+                <h2>
+
+                    Team Budget
+
+                </h2>
+
+                <div className="budget-progress">
+
+                    <div
+
+                        className="budget-fill"
+
+                        style={{
+
+                            width: `${(usedBudget / 100) * 100}%`
+
+                        }}
+
+                    >
+
+                    </div>
+
+                </div>
+
+                <div className="budget-percentage">
+
+                    {usedBudget} / 100 Used
+
+                </div>
+
+            </div>
+
+            <div className="progress-section">
+
+                <h2>
+
+                    Selected Players
+
+                </h2>
+
+                <div className="player-count">
+
+                    {selectedPlayers.length}/11
+
+                </div>
+
+            </div>
+
             {
 
-                errorMessage && (
+                errorMessage &&
 
-                    <p>
+                <div className="error-message">
 
-                        {errorMessage}
+                    {errorMessage}
 
-                    </p>
-
-                )
+                </div>
 
             }
 
-            <p>
+            <div className="leadership">
 
-                Team Name : {teamName}
+                <div className="leader-card">
 
-            </p>
-            <p>
+                    <span>
 
-                Selected Players :
+                        ⭐ Captain
 
-                {selectedPlayers.length}/11
+                    </span>
 
-            </p>
+                    <strong>
 
-            <p>
+                        {
 
-                Used Budget :
+                            captain
 
-                {usedBudget}
+                                ?
 
-            </p>
+                                captain.player_name
 
-            <p>
+                                :
 
-                Remaining Budget :
+                                "Not Selected"
 
-                {remainingBudget}
+                        }
 
-            </p>
-            <p>
+                    </strong>
 
-                Captain :
+                </div>
 
-                {
+                <div className="leader-card">
 
-                    captain
+                    <span>
 
-                        ?
+                        🥈 Vice Captain
 
-                        captain.player_name
+                    </span>
 
-                        :
+                    <strong>
 
-                        "Not Selected"
+                        {
 
-                }
+                            viceCaptain
 
-            </p>
+                                ?
 
-            <p>
+                                viceCaptain.player_name
 
-                Vice Captain :
+                                :
 
-                {
+                                "Not Selected"
 
-                    viceCaptain
+                        }
 
-                        ?
+                    </strong>
 
-                        viceCaptain.player_name
+                </div>
 
-                        :
+            </div>
 
-                        "Not Selected"
+            <button
 
-                }
+                className="save-btn"
 
-            </p>
+                onClick={onSave}
+
+            >
+
+                Save Fantasy Team
+
+            </button>
 
         </div>
 

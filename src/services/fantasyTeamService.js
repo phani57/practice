@@ -60,6 +60,7 @@ const updateTeam = async (teamId, teamData) => {
 
 };
 
+
 export default {
 
     getMyTeams,

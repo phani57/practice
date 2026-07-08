@@ -1,0 +1,212 @@
+/* ==========================================
+   PAGE
+========================================== */
+
+.playingxi-container{
+
+    color:white;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.page-header{
+
+    margin-bottom:30px;
+}
+
+.page-subtitle{
+
+    margin:0;
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    font-weight:700;
+}
+
+.page-title{
+
+    margin-top:8px;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:white;
+}
+
+/* ==========================================
+   TEAM GRID
+========================================== */
+
+.teams-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:28px;
+}
+
+/* ==========================================
+   TEAM CARD
+========================================== */
+
+.team-card{
+
+    background:#111827;
+
+    border:1px solid #334155;
+
+    border-radius:18px;
+
+    padding:24px;
+}
+
+.team-card h2{
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+    color:white;
+
+    padding-bottom:12px;
+
+    border-bottom:1px solid #334155;
+}
+
+/* ==========================================
+   PLAYERS
+========================================== */
+
+.players-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.player-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#1e293b;
+
+    padding:12px 14px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.player-item:hover{
+
+    background:#293548;
+}
+
+.player-item input{
+
+    width:18px;
+
+    height:18px;
+
+    accent-color:#6366f1;
+
+    cursor:pointer;
+}
+
+.player-item span{
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:500;
+}
+
+/* ==========================================
+   SAVE BUTTON
+========================================== */
+
+.save-section{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:30px;
+}
+
+.save-btn{
+
+    background:#4f46e5;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 26px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.25s;
+}
+
+.save-btn:hover{
+
+    background:#4338ca;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+.teams-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.page-title{
+
+font-size:28px;
+
+}
+
+.save-section{
+
+justify-content:center;
+
+}
+
+.save-btn{
+
+width:100%;
+
+}
+
+}

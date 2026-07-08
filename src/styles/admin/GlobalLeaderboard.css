@@ -1,0 +1,191 @@
+/* ==========================================
+   PAGE
+========================================== */
+
+.leaderboard-container{
+
+    color:white;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:28px;
+}
+
+.page-subtitle{
+
+    margin:0;
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+}
+
+.page-title{
+
+    margin-top:8px;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:white;
+}
+
+/* ==========================================
+   TABLE CARD
+========================================== */
+
+.table-card{
+
+    background:#111827;
+
+    border:1px solid #334155;
+
+    border-radius:18px;
+
+    overflow:hidden;
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+thead{
+
+    background:#1e293b;
+}
+
+th{
+
+    padding:18px;
+
+    text-align:left;
+
+    color:#cbd5e1;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    border-bottom:1px solid #334155;
+}
+
+td{
+
+    padding:18px;
+
+    color:white;
+
+    border-bottom:1px solid #1e293b;
+}
+
+tbody tr{
+
+    transition:.25s;
+}
+
+tbody tr:hover{
+
+    background:#1e293b;
+}
+
+tbody tr:last-child td{
+
+    border-bottom:none;
+}
+
+/* ==========================================
+   RANK BADGE
+========================================== */
+
+.rank-badge{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-width:48px;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    background:#312e81;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+/* ==========================================
+   TOP 3 HIGHLIGHT
+========================================== */
+
+tbody tr:nth-child(1) .rank-badge{
+
+    background:#ca8a04;
+}
+
+tbody tr:nth-child(2) .rank-badge{
+
+    background:#64748b;
+}
+
+tbody tr:nth-child(3) .rank-badge{
+
+    background:#b45309;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.page-title{
+
+font-size:28px;
+
+}
+
+.table-card{
+
+overflow-x:auto;
+
+}
+
+table{
+
+min-width:700px;
+
+}
+
+}

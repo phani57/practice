@@ -18,90 +18,73 @@ import CreateTeam from "../pages/CreateTeam";
 
 import AdminDashboard from "../pages/admin/Dashboard";
 import Players from "../pages/admin/Players";
+import Users from "../pages/admin/Users";
+import GlobalLeaderboard from "../pages/admin/GlobalLeaderboard";
+import Teams from "../pages/admin/Teams";
+import TeamDetails from "../pages/admin/TeamDetails";
+import AdminTournaments from "../pages/admin/AdminTournaments";
+import TournamentDetails from "../pages/admin/TournamentDetails";
+import MatchPlayers from "../pages/admin/MatchPlayers";
+import MatchScores from "../pages/admin/MatchScores";
+import MatchLeaderboard from "../pages/admin/MatchLeaderboard";
 
 function AppRoutes() {
+  return (
+    <Routes>
+      {/* Public */}
 
-    return (
+      <Route path="/" element={<Login />} />
 
-        <Routes>
+      <Route path="/register" element={<Register />} />
 
-            {/* Public */}
+      {/* User */}
 
-            <Route path="/" element={<Login />} />
+      <Route
+        element={
+          <ProtectedRoute>
+            <MainLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route path="dashboard" element={<Dashboard />} />
 
-            <Route path="/register" element={<Register />} />
+        <Route path="tournaments" element={<Tournaments />} />
 
-            {/* User */}
+        <Route path="matches/:id" element={<Matches />} />
 
-            <Route
+        <Route path="create-team/:id" element={<CreateTeam />} />
 
-                element={
+        <Route path="my-teams" element={<MyTeams />} />
 
-                    <ProtectedRoute>
+        <Route path="leaderboard" element={<Leaderboard />} />
 
-                        <MainLayout />
+        <Route path="profile" element={<Profile />} />
+      </Route>
 
-                    </ProtectedRoute>
+      {/* Admin */}
 
-                }
-
-            >
-
-                <Route path="dashboard" element={<Dashboard />} />
-
-                <Route path="tournaments" element={<Tournaments />} />
-
-                <Route path="matches/:id" element={<Matches />} />
-
-                <Route path="create-team/:id" element={<CreateTeam />} />
-
-                <Route path="my-teams" element={<MyTeams />} />
-
-                <Route path="leaderboard" element={<Leaderboard />} />
-
-                <Route path="profile" element={<Profile />} />
-
-            </Route>
-
-            {/* Admin */}
-
-            <Route
-
-                path="/admin"
-
-                element={
-
-                    <ProtectedRoute>
-
-                        <AdminLayout />
-
-                    </ProtectedRoute>
-
-                }
-
-            >
-
-                <Route
-
-                    path="dashboard"
-
-                    element={<AdminDashboard />}
-
-                />
-                <Route
-
-                    path="players"
-
-                    element={<Players />}
-
-                />
-
-            </Route>
-
-        </Routes>
-
-    );
-
+      <Route
+        path="/admin"
+        element={
+          <ProtectedRoute>
+            <AdminLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route path="dashboard" element={<AdminDashboard />} />
+        <Route path="players" element={<Players />} />
+        <Route path="users" element={<Users />} />
+        <Route path="global-leaderboard" element={<GlobalLeaderboard />} />
+        <Route path="teams" element={<Teams />} />
+        <Route path="teams/:id" element={<TeamDetails />} />
+        <Route path="AdminTournaments" element={<AdminTournaments />} />
+        <Route path="tournaments/:id" element={<TournamentDetails />} />
+        <Route path="matches/:id/players" element={<MatchPlayers />} />
+        <Route path="matches/:id/scores" element={<MatchScores />} />
+        <Route path="matches/:id/leaderboard" element={<MatchLeaderboard />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default AppRoutes;

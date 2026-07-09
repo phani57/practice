@@ -25,10 +25,6 @@ function TournamentDetails() {
 
   const [selectedMatchId, setSelectedMatchId] = useState(0);
 
-  const [successMessage, setSuccessMessage] = useState("");
-
-  const [validationMessage, setValidationMessage] = useState("");
-
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [deleteTargetId, setDeleteTargetId] = useState(null);
 
@@ -90,41 +86,32 @@ function TournamentDetails() {
   // Create or update match
   async function saveMatch(formData) {
     try {
+      let response;
       if (isEditMode) {
-        const response = await tournamentService.updateMatch(
+        response = await tournamentService.updateMatch(
           selectedMatchId,
 
           formData,
         );
-
-        setSuccessMessage(response.message);
       } else {
-        const response = await tournamentService.createMatch(
+        response = await tournamentService.createMatch(
           id,
 
           formData,
         );
-
-        setSuccessMessage(response.message);
       }
 
+      toast.success(response.message);
       localStorage.removeItem(`matchDraft_${id}`);
-
       setIsEditMode(false);
-
       setSelectedMatchId(0);
-
       loadTournament();
-
-      setTimeout(() => {
-        setSuccessMessage("");
-      }, 3000);
     } catch (error) {
-      setValidationMessage(
+      const errorMsg =
         error.response?.data?.errors?.team2_id?.[0] ||
-          error.response?.data?.message ||
-          "Validation failed",
-      );
+        error.response?.data?.message ||
+        "Validation failed";
+      toast.error(errorMsg);
     }
   }
 
@@ -196,8 +183,6 @@ function TournamentDetails() {
         editingMatch={tournament.matches.find(
           (match) => match.id === selectedMatchId,
         )}
-        validationMessage={validationMessage}
-        successMessage={successMessage}
         onSave={saveMatch}
       />
 

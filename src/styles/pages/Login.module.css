@@ -4,56 +4,45 @@
     box-sizing:border-box;
 }
 
-.authContainer{
-    position:relative;
-
-    width:100%;
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:24px;
-
-    overflow:hidden;
-
-    background:linear-gradient(135deg,#1d4ed8,#2563eb);
+.authContainer {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow: hidden;
+    background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 1) 0%, rgba(15, 23, 42, 1) 90%);
 }
 
 /* Background Decorations */
 
 .authContainer::before,
-.authContainer::after{
-    content:"";
-
-    position:absolute;
-
-    border-radius:50%;
-
-    filter:blur(60px);
-
-    opacity:.18;
+.authContainer::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
 }
 
-.authContainer::before{
-    width:320px;
-    height:320px;
-
-    background:#ffffff;
-
-    top:-120px;
-    left:-120px;
+.authContainer::before {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.6) 0%, rgba(37, 99, 235, 0.2) 70%, transparent 100%);
+    top: -150px;
+    left: -150px;
+    animation: float1 15s infinite alternate ease-in-out;
 }
 
-.authContainer::after{
-    width:280px;
-    height:280px;
-
-    background:#60a5fa;
-
-    right:-80px;
-    bottom:-80px;
+.authContainer::after {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.5) 0%, rgba(79, 70, 229, 0.15) 70%, transparent 100%);
+    right: -100px;
+    bottom: -100px;
+    animation: float2 12s infinite alternate ease-in-out;
 }
 
 .authCard{
@@ -313,4 +302,22 @@
         font-size:28px;
     }
 
+}
+
+@keyframes float1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(100px, 80px) scale(1.1);
+    }
+}
+
+@keyframes float2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(-100px, -60px) scale(1.15);
+    }
 }

@@ -245,6 +245,9 @@ const teamSlice = createSlice({
 
             state.remainingBudget = action.payload.remainingBudget;
 
+        },
+        clearError(state) {
+            state.errorMessage = "";
         }
 
     }
@@ -269,7 +272,8 @@ export const {
 
     loadEditingTeam,
     resetTeam,
-    restoreDraft
+    restoreDraft,
+    clearError
 
 } = teamSlice.actions;
 

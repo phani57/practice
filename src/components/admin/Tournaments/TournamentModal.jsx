@@ -174,8 +174,8 @@ function TournamentModal({
                   key={team.id}
                   className={
                     form.teams.includes(team.id)
-                      ? "team-item selected"
-                      : "team-item"
+                      ? `${styles.teamItem} ${styles.selected}`
+                      : styles.teamItem
                   }
                 >
                   <input
@@ -183,7 +183,10 @@ function TournamentModal({
                     value={team.id}
                     checked={form.teams.includes(team.id)}
                     onChange={handleTeamChange}
+                    className={styles.hiddenCheckbox}
                   />
+
+                  <span className={styles.checkboxIndicator}>✓</span>
 
                   <span className={styles.teamName}>{team.team_name}</span>
                 </label>

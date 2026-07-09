@@ -1,6 +1,8 @@
 import styles from "../../styles/pages/CreateTeam.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setTeamName } from "../../redux/teamSlice";
+import { setTeamName, clearError } from "../../redux/teamSlice";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 function TeamSummary({ onSave }) {
 
@@ -41,6 +43,13 @@ function TeamSummary({ onSave }) {
         state => state.team.viceCaptain
 
     );
+
+    useEffect(() => {
+        if (errorMessage) {
+            toast.error(errorMessage);
+            dispatch(clearError());
+        }
+    }, [errorMessage, dispatch]);
 
     return (
 
@@ -125,18 +134,6 @@ function TeamSummary({ onSave }) {
                 </div>
 
             </div>
-
-            {
-
-                errorMessage &&
-
-                <div className={styles.errorMessage}>
-
-                    {errorMessage}
-
-                </div>
-
-            }
 
             <div className={styles.leadership}>
 

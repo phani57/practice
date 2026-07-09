@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 import tournamentService from "../../services/admin/tournamentService";
 
-import TournamentsHeader from "../../components/admin/tournaments/TournamentsHeader";
-import TournamentsToolbar from "../../components/admin/tournaments/TournamentsToolbar";
-import TournamentsTable from "../../components/admin/tournaments/TournamentsTable";
-import TournamentModal from "../../components/admin/tournaments/TournamentModal";
+import TournamentsHeader from "../../components/admin/Tournaments/TournamentsHeader";
+import TournamentsToolbar from "../../components/admin/Tournaments/TournamentsToolbar";
+import TournamentsTable from "../../components/admin/Tournaments/TournamentsTable";
+import TournamentModal from "../../components/admin/Tournaments/TournamentModal";
 import ConfirmModal from "../../components/common/ConfirmModal";
 
 function AdminTournaments() {

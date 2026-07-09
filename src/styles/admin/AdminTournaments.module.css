@@ -177,6 +177,8 @@ th {
     font-weight: 600;
 
     border-bottom: 1px solid #334155;
+
+    vertical-align: middle;
 }
 
 td {
@@ -186,6 +188,8 @@ td {
     color: white;
 
     border-bottom: 1px solid #1e293b;
+
+    vertical-align: middle;
 }
 
 tbody tr {
@@ -246,6 +250,8 @@ tbody tr:last-child td {
 .actions {
 
     display: flex;
+
+    align-items: center;
 
     gap: 10px;
 }
@@ -408,7 +414,7 @@ tbody tr:last-child td {
     font-size: 14px;
 }
 
-.formGroup input,
+.formGroup input:not([type="checkbox"]),
 .formGroup select {
 
     width: 100%;
@@ -426,7 +432,7 @@ tbody tr:last-child td {
     outline: none;
 }
 
-.formGroup input:focus,
+.formGroup input:not([type="checkbox"]):focus,
 .formGroup select:focus {
 
     border-color: #6366f1;
@@ -493,7 +499,7 @@ tbody tr:last-child td {
 
     align-items: center;
 
-    gap: 14px;
+    gap: 20px;
 
     padding: 12px 14px;
 
@@ -508,6 +514,10 @@ tbody tr:last-child td {
     transition: .25s;
 
     user-select: none;
+
+    width: 100%;
+
+    box-sizing: border-box;
 
 }
 
@@ -527,20 +537,39 @@ tbody tr:last-child td {
 
 }
 
-/* Bigger Checkbox */
+.hiddenCheckbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+}
 
-.teamItem input[type="checkbox"] {
-
-    width: 20px;
-
-    height: 20px;
-
-    cursor: pointer;
-
-    accent-color: #6366f1;
-
+.checkboxIndicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #4b5563;
+    border-radius: 5px;
+    background: #1f2937;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
     flex-shrink: 0;
+    color: transparent;
+    font-size: 11px;
+    font-weight: 700;
+    user-select: none;
+}
 
+.teamItem:hover .checkboxIndicator {
+    border-color: #6366f1;
+}
+
+.teamItem.selected .checkboxIndicator {
+    background: #6366f1;
+    border-color: #6366f1;
+    color: white;
 }
 
 /* Team Name */
@@ -553,7 +582,11 @@ tbody tr:last-child td {
 
     font-weight: 500;
 
+    line-height: 1.4;
+
     word-break: break-word;
+
+    overflow-wrap: anywhere;
 
 }
 

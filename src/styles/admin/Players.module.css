@@ -180,6 +180,8 @@ th {
     font-weight: 600;
 
     border-bottom: 1px solid #334155;
+
+    vertical-align: middle;
 }
 
 td {
@@ -189,6 +191,8 @@ td {
     color: white;
 
     border-bottom: 1px solid #1e293b;
+
+    vertical-align: middle;
 }
 
 tbody tr {
@@ -213,6 +217,8 @@ tbody tr:last-child td {
 .actions {
 
     display: flex;
+
+    align-items: center;
 
     gap: 10px;
 }
@@ -371,7 +377,7 @@ tbody tr:last-child td {
     font-weight: 500;
 }
 
-.formGroup input {
+.formGroup input:not([type="checkbox"]) {
 
     width: 100%;
 
@@ -390,7 +396,7 @@ tbody tr:last-child td {
     font-size: 14px;
 }
 
-.formGroup input:focus {
+.formGroup input:not([type="checkbox"]):focus {
 
     border-color: #6366f1;
 }

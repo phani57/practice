@@ -1,4 +1,4 @@
-import styles from "../../styles/admin/layout/AdminHeader.module.css";
+import styles from "../../styles/admin/Layout/AdminHeader.module.css";
 import { useNavigate } from "react-router-dom";
 import authService from "../../services/authService";
 

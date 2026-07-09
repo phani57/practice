@@ -129,7 +129,7 @@ function PlayerCard({ player }) {
 
                     <button
 
-                        className={styles.captainBtn}
+                        className={`${styles.captainBtn} ${captain?.id === player.id ? styles.activeCaptain : ""}`}
 
                         onClick={() =>
 
@@ -141,27 +141,17 @@ function PlayerCard({ player }) {
 
                         }
 
+                        title="Set Captain"
+
                     >
 
-                        {
-
-                            captain?.id === player.id
-
-                                ?
-
-                                "⭐ Captain"
-
-                                :
-
-                                "Captain"
-
-                        }
+                        C
 
                     </button>
 
                     <button
 
-                        className={styles.vcBtn}
+                        className={`${styles.vcBtn} ${viceCaptain?.id === player.id ? styles.activeVc : ""}`}
 
                         onClick={() =>
 
@@ -173,21 +163,11 @@ function PlayerCard({ player }) {
 
                         }
 
+                        title="Set Vice Captain"
+
                     >
 
-                        {
-
-                            viceCaptain?.id === player.id
-
-                                ?
-
-                                "🥈 Vice"
-
-                                :
-
-                                "Vice"
-
-                        }
+                        VC
 
                     </button>
 

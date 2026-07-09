@@ -10,10 +10,6 @@ function MatchForm({
 
   editingMatch,
 
-  validationMessage,
-
-  successMessage,
-
   onSave,
 }) {
   const [form, setForm] = useState({
@@ -91,13 +87,7 @@ function MatchForm({
     <div className={styles.card}>
       <h2>{isEditMode ? "Edit Match" : "Create Match"}</h2>
 
-      {validationMessage && (
-        <div className={styles.validationError}>{validationMessage}</div>
-      )}
 
-      {successMessage && (
-        <div className={styles.successMessage}>{successMessage}</div>
-      )}
 
       <form className={styles.matchForm} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>

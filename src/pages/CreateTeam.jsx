@@ -182,6 +182,30 @@ function CreateTeam() {
 
         }
 
+        const team1SelectedCount = selectedPlayers.filter(sp =>
+            team1Players.some(p => p.player?.id === sp.id)
+        ).length;
+
+        const team2SelectedCount = selectedPlayers.filter(sp =>
+            team2Players.some(p => p.player?.id === sp.id)
+        ).length;
+
+        if (team1SelectedCount < 4) {
+
+            toast.warning(`Please select at least 4 players from ${team1Name || "Team 1"}`);
+
+            return;
+
+        }
+
+        if (team2SelectedCount < 4) {
+
+            toast.warning(`Please select at least 4 players from ${team2Name || "Team 2"}`);
+
+            return;
+
+        }
+
         if (!captain) {
 
             toast.warning("Please select captain");

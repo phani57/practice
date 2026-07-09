@@ -1,4 +1,4 @@
-import styles from "../styles/Pages/Leaderboard.module.css";
+import styles from "../styles/pages/Leaderboard.module.css";
 import { useEffect, useState } from "react";
 import fantasyTeamService from "../services/fantasyTeamService";
 

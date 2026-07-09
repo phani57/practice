@@ -1,4 +1,4 @@
-import styles from "../../styles/admin/layout/AdminSidebar.module.css";
+import styles from "../../styles/admin/Layout/AdminSidebar.module.css";
 import { NavLink } from "react-router-dom";
 
 function AdminSidebar() {

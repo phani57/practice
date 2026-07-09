@@ -6,10 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import teamService from "../../services/admin/teamService";
 
-import TeamsHeader from "../../components/admin/teams/TeamsHeader";
-import TeamsToolbar from "../../components/admin/teams/TeamsToolbar";
-import TeamsTable from "../../components/admin/teams/TeamsTable";
-import TeamModal from "../../components/admin/teams/TeamModal";
+import TeamsHeader from "../../components/admin/Teams/TeamsHeader";
+import TeamsToolbar from "../../components/admin/Teams/TeamsToolbar";
+import TeamsTable from "../../components/admin/Teams/TeamsTable";
+import TeamModal from "../../components/admin/Teams/TeamModal";
 import ConfirmModal from "../../components/common/ConfirmModal";
 
 function Teams() {

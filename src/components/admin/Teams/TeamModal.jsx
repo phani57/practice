@@ -220,7 +220,10 @@ function TeamModal({
                     value={player.id}
                     checked={form.players.includes(player.id)}
                     onChange={handlePlayerChange}
+                    className={styles.hiddenCheckbox}
                   />
+
+                  <span className={styles.checkboxIndicator}>✓</span>
 
                   <span className={styles.playerName}>{player.player_name}</span>
                 </label>

@@ -96,7 +96,7 @@ function MatchPlayers() {
       toast.success(response.message);
 
       clearDraft();
-      
+
       navigate(-1); // Redirect back
     } catch (error) {
       console.log(error);
@@ -171,12 +171,15 @@ function MatchPlayers() {
 
           <div className={styles.playersList}>
             {team1Players.map((player) => (
-              <label key={player.id} className={styles.playerItem}>
+              <label key={player.id} className={`${styles.playerItem} ${selectedPlayers.includes(player.id) ? styles.selected : ""}`}>
                 <input
                   type="checkbox"
                   checked={selectedPlayers.includes(player.id)}
                   onChange={(e) => togglePlayer(player.id, e)}
+                  className={styles.hiddenCheckbox}
                 />
+
+                <span className={styles.checkboxIndicator}>✓</span>
 
                 <span>{player.player_name}</span>
               </label>
@@ -205,12 +208,15 @@ function MatchPlayers() {
 
           <div className={styles.playersList}>
             {team2Players.map((player) => (
-              <label key={player.id} className={styles.playerItem}>
+              <label key={player.id} className={`${styles.playerItem} ${selectedPlayers.includes(player.id) ? styles.selected : ""}`}>
                 <input
                   type="checkbox"
                   checked={selectedPlayers.includes(player.id)}
                   onChange={(e) => togglePlayer(player.id, e)}
+                  className={styles.hiddenCheckbox}
                 />
+
+                <span className={styles.checkboxIndicator}>✓</span>
 
                 <span>{player.player_name}</span>
               </label>

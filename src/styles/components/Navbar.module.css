@@ -9,8 +9,9 @@ NAVBAR
     top: 0;
 
     z-index: 1000;
-
-    min-height: 60px;
+    height: 64px !important;
+    max-height: 64px !important;
+    flex-shrink: 0 !important;
     padding: 0 30px;
     gap: 15px;
 
@@ -30,57 +31,60 @@ NAVBAR
 LOGO
 ==========================*/
 
-.logo a{
+.logo a {
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    gap:12px;
+    gap: 12px;
 
-    text-decoration:none;
-
-}
-.logoIcon{
-
-    width:42px;
-
-    height:42px;
-
-    border-radius:12px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:linear-gradient(135deg,#2563eb,#3b82f6);
-
-    color:#fff;
-
-    font-size:18px;   /* was 20px */
-
-    flex-shrink:0;
+    text-decoration: none;
 
 }
 
-.logoText{
+.logoIcon {
 
-    font-size:24px;
+    width: 42px;
 
-    font-weight:700;
+    height: 42px;
 
-    color:#111827;
+    border-radius: 12px;
 
-    line-height:1;
+    display: flex;
 
-    white-space:nowrap;
+    align-items: center;
+
+    justify-content: center;
+
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+
+    color: #fff;
+
+    font-size: 18px;
+    /* was 20px */
+
+    flex-shrink: 0;
 
 }
-.logo{
 
-    flex-shrink:0;
+.logoText {
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+}
+
+.logo {
+
+    flex-shrink: 0;
     justify-self: start;
 
 }
@@ -152,7 +156,7 @@ RIGHT
     align-items: center;
 
     gap: 14px;
-    
+
     justify-self: end;
 
 }
@@ -271,7 +275,7 @@ RESPONSIVE
         height: auto;
 
         min-height: 60px;
-        
+
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;

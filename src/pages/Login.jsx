@@ -1,5 +1,5 @@
-import styles from "../styles/Pages/Login.module.css";
-import { useState,useContext } from "react";
+import styles from "../styles/pages/Login.module.css";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import authService from "../services/authService";

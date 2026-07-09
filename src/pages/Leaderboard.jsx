@@ -1,4 +1,4 @@
-import "../styles/Pages/Leaderboard.css";
+import styles from "../styles/Pages/Leaderboard.module.css";
 import { useEffect, useState } from "react";
 import fantasyTeamService from "../services/fantasyTeamService";
 
@@ -79,15 +79,15 @@ function Leaderboard() {
 
         <>
 
-            <div className="leaderboard-container">
+            <div className={styles.leaderboardContainer}>
 
-                <h1 className="page-title">
+                <h1 className={styles.pageTitle}>
 
                     🏆 Global Leaderboard
 
                 </h1>
 
-                <div className="search-box">
+                <div className={styles.searchBox}>
 
                     <input
                         type="text"
@@ -105,15 +105,15 @@ function Leaderboard() {
 
                         <div
                             key={user.id}
-                            className={`leaderboard-card
-                                ${user.id === currentUserId ? "current-user" : ""}
-                                ${user.rank === 1 ? "top1" : ""}
-                                ${user.rank === 2 ? "top2" : ""}
-                                ${user.rank === 3 ? "top3" : ""}
+                            className={`${styles.leaderboardCard}
+                                ${user.id === currentUserId ? styles.currentUser : ""}
+                                ${user.rank === 1 ? styles.top1 : ""}
+                                ${user.rank === 2 ? styles.top2 : ""}
+                                ${user.rank === 3 ? styles.top3 : ""}
                             `}
                         >
 
-                            <div className="rank-circle">
+                            <div className={styles.rankCircle}>
 
                                 {
                                     user.rank === 1
@@ -127,9 +127,9 @@ function Leaderboard() {
 
                             </div>
 
-                            <div className="user-info">
+                            <div className={styles.userInfo}>
 
-                                <div className="name-row">
+                                <div className={styles.nameRow}>
 
                                     <h3>
 
@@ -140,7 +140,7 @@ function Leaderboard() {
                                     {
                                         user.id === currentUserId && (
 
-                                            <span className="you-badge">
+                                            <span className={styles.youBadge}>
 
                                                 YOU
 
@@ -151,7 +151,7 @@ function Leaderboard() {
 
                                 </div>
 
-                                <span className="points-label">
+                                <span className={styles.pointsLabel}>
 
                                     Fantasy Points
 
@@ -159,7 +159,7 @@ function Leaderboard() {
 
                             </div>
 
-                            <div className="points-badge">
+                            <div className={styles.pointsBadge}>
 
                                 {user.fantasy_points}
 
@@ -170,7 +170,7 @@ function Leaderboard() {
                     ))
                 }
 
-                <div className="pagination">
+                <div className={styles.pagination}>
 
                     <button
                         onClick={previousPage}

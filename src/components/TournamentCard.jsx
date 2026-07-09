@@ -1,4 +1,4 @@
-import "../styles/components/TournamentCard.css";
+import styles from "../styles/components/TournamentCard.module.css";
 function TournamentCard({
     tournamentId,
     name,
@@ -10,9 +10,9 @@ function TournamentCard({
 
     return (
 
-        <div className="tournament-card">
+        <div className={styles.tournamentCard}>
 
-            <div className="status-badge">
+            <div className={styles.statusBadge}>
 
                 {status}
 
@@ -24,7 +24,7 @@ function TournamentCard({
 
             </h2>
 
-            <div className="dates">
+            <div className={styles.dates}>
 
                 <div>
 
@@ -45,7 +45,7 @@ function TournamentCard({
             </div>
 
             <button
-                className="view-btn"
+                className={styles.viewBtn}
                 onClick={() => onMatchClick(tournamentId)}
             >
 

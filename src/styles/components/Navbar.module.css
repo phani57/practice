@@ -10,17 +10,15 @@ NAVBAR
 
     z-index: 1000;
 
-    height: 72px;
+    min-height: 60px;
+    padding: 0 30px;
+    gap: 15px;
 
     background: white;
 
-    display: flex;
-
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-
-    justify-content: space-between;
-
-    padding: 0 30px;
 
     border-bottom: 1px solid #e5e7eb;
 
@@ -43,7 +41,7 @@ LOGO
     text-decoration:none;
 
 }
-.logo-icon{
+.logoIcon{
 
     width:42px;
 
@@ -67,7 +65,7 @@ LOGO
 
 }
 
-.logo-text{
+.logoText{
 
     font-size:24px;
 
@@ -83,7 +81,17 @@ LOGO
 .logo{
 
     flex-shrink:0;
+    justify-self: start;
 
+}
+
+.logo a:hover {
+    opacity: 0.9;
+    background: transparent !important;
+}
+
+.logo a:hover .logoText {
+    color: #2563eb;
 }
 
 /*==========================
@@ -137,13 +145,15 @@ MENU
 RIGHT
 ==========================*/
 
-.right-section {
+.rightSection {
 
     display: flex;
 
     align-items: center;
 
     gap: 14px;
+    
+    justify-self: end;
 
 }
 
@@ -151,7 +161,7 @@ RIGHT
 INFO CARD
 ==========================*/
 
-.info-card {
+.infoCard {
 
     display: flex;
 
@@ -207,7 +217,7 @@ INFO CARD
 LOGOUT
 ==========================*/
 
-.logout-btn {
+.logoutBtn {
 
     border: none;
 
@@ -229,7 +239,7 @@ LOGOUT
 
 }
 
-.logout-btn:hover {
+.logoutBtn:hover {
 
     background: #dc2626;
 
@@ -245,7 +255,8 @@ RESPONSIVE
 
     .menu {
 
-        display: none;
+        /* Allow menu to be visible but maybe wrap or adjust spacing */
+        flex-wrap: wrap;
 
     }
 
@@ -259,17 +270,21 @@ RESPONSIVE
 
         height: auto;
 
-        min-height: 72px;
+        min-height: 60px;
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
     }
 
-    .logo-text {
+    .logoText {
 
         font-size: 20px;
 
     }
 
-    .info-card {
+    .infoCard {
 
         display: none;
 

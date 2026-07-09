@@ -2,8 +2,7 @@
    PAGE
 ========================================== */
 
-.tournaments-container {
-
+.teamsContainer {
     color: white;
 }
 
@@ -11,70 +10,46 @@
    HEADER
 ========================================== */
 
-.page-header {
-
+.pageHeader {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     margin-bottom: 28px;
 }
 
-.page-subtitle {
-
+.pageSubtitle {
     margin: 0;
-
     color: #94a3b8;
-
     font-size: 12px;
-
     text-transform: uppercase;
-
     letter-spacing: 2px;
-
     font-weight: 700;
 }
 
-.page-title {
-
+.pageTitle {
     margin-top: 8px;
-
     font-size: 34px;
-
     font-weight: 700;
-
     color: white;
 }
 
 /* ==========================================
-   BUTTONS
+   BUTTON
 ========================================== */
 
-.primary-btn {
-
-    border: none;
-
+.primaryBtn {
     background: #4f46e5;
-
     color: white;
-
+    border: none;
     padding: 12px 22px;
-
     border-radius: 12px;
-
     cursor: pointer;
-
     font-size: 14px;
-
     font-weight: 600;
-
     transition: .25s;
 }
 
-.primary-btn:hover {
-
+.primaryBtn:hover {
     background: #4338ca;
 }
 
@@ -82,56 +57,39 @@
    SUCCESS
 ========================================== */
 
-.success-message {
-
-    background: #166534;
-
+.successMessage {
+    background: rgba(34, 197, 94, .15);
     border: 1px solid #22c55e;
-
-    color: white;
-
+    color: #4ade80;
     padding: 14px 18px;
-
     border-radius: 12px;
-
     margin-bottom: 24px;
 }
 
 /* ==========================================
-   SEARCH
+   TOOLBAR
 ========================================== */
 
 .toolbar {
-
     margin-bottom: 22px;
 }
 
-.search-box {
-
+.searchBox {
     width: 320px;
-
     background: #111827;
-
     border: 1px solid #334155;
-
     color: white;
-
     padding: 12px 16px;
-
     border-radius: 12px;
-
     outline: none;
-
     font-size: 14px;
 }
 
-.search-box::placeholder {
-
+.searchBox::placeholder {
     color: #64748b;
 }
 
-.search-box:focus {
-
+.searchBox:focus {
     border-color: #6366f1;
 }
 
@@ -139,164 +97,98 @@
    TABLE
 ========================================== */
 
-.table-card {
-
+.tableCard {
     background: #111827;
-
     border: 1px solid #334155;
-
     border-radius: 18px;
-
     overflow: hidden;
-
-    margin-bottom: 24px;
 }
 
 table {
-
     width: 100%;
-
     border-collapse: collapse;
 }
 
 thead {
-
     background: #1e293b;
 }
 
 th {
-
     padding: 18px;
-
     text-align: left;
-
     color: #cbd5e1;
-
-    font-size: 14px;
-
     font-weight: 600;
-
+    font-size: 14px;
     border-bottom: 1px solid #334155;
 }
 
 td {
-
     padding: 18px;
-
     color: white;
-
     border-bottom: 1px solid #1e293b;
 }
 
 tbody tr {
-
     transition: .25s;
 }
 
 tbody tr:hover {
-
     background: #1e293b;
 }
 
 tbody tr:last-child td {
-
     border-bottom: none;
 }
 
 /* ==========================================
-   STATUS
+   TEAM LINK
 ========================================== */
 
-.status {
-
-    padding: 6px 14px;
-
-    border-radius: 30px;
-
-    font-size: 12px;
-
+.teamLink {
+    color: #60a5fa;
+    text-decoration: none;
+    cursor: pointer;
     font-weight: 600;
 }
 
-.live {
-
-    background: rgba(34, 197, 94, .15);
-
-    color: #4ade80;
-}
-
-.upcoming {
-
-    background: rgba(245, 158, 11, .15);
-
-    color: #fbbf24;
-}
-
-.completed {
-
-    background: rgba(59, 130, 246, .15);
-
-    color: #60a5fa;
+.teamLink:hover {
+    color: #93c5fd;
 }
 
 /* ==========================================
-   ACTIONS
+   ACTION BUTTONS
 ========================================== */
 
 .actions {
-
     display: flex;
-
     gap: 10px;
 }
 
 .actions button {
-
     border: none;
-
-    padding: 8px 16px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
     color: white;
-
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
     font-size: 13px;
-
     font-weight: 600;
-
-    transition: .2s;
+    transition: .25s;
 }
 
-.edit-btn {
-
+.editBtn {
     background: #2563eb;
 }
 
-.edit-btn:hover {
-
+.editBtn:hover {
     background: #1d4ed8;
 }
 
-.delete-btn {
-
+.deleteBtn {
     background: #dc2626;
 }
 
-.delete-btn:hover {
-
+.deleteBtn:hover {
     background: #b91c1c;
-}
-
-.view-btn {
-
-    background: #16a34a;
-}
-
-.view-btn:hover {
-
-    background: #15803d;
 }
 
 /* ==========================================
@@ -304,44 +196,30 @@ tbody tr:last-child td {
 ========================================== */
 
 .pagination {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 20px;
-
+    margin-top: 28px;
     color: white;
 }
 
-.page-btn {
-
+.pageBtn {
     background: #1e293b;
-
     border: 1px solid #334155;
-
     color: white;
-
     padding: 10px 18px;
-
     border-radius: 10px;
-
     cursor: pointer;
-
-    transition: .2s;
+    transition: .25s;
 }
 
-.page-btn:hover:not(:disabled) {
-
+.pageBtn:hover:not(:disabled) {
     background: #4f46e5;
 }
 
-.page-btn:disabled {
-
+.pageBtn:disabled {
     opacity: .4;
-
     cursor: not-allowed;
 }
 
@@ -349,42 +227,27 @@ tbody tr:last-child td {
    MODAL
 ========================================== */
 
-.modal-backdrop {
-
+.modalBackdrop {
     position: fixed;
-
     inset: 0;
-
-    background: rgba(0, 0, 0, .75);
-
+    background: rgba(0,0,0,.75);
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     z-index: 999;
 }
 
-.modal-card {
-
-    width: 620px;
-
+.modalCard {
+    width: 650px;
     max-width: 95%;
-
     background: #111827;
-
     border: 1px solid #334155;
-
     border-radius: 20px;
-
     padding: 28px;
 }
 
-.modal-card h2 {
-
+.modalCard h2 {
     margin-bottom: 24px;
-
     color: white;
 }
 
@@ -392,54 +255,39 @@ tbody tr:last-child td {
    FORM
 ========================================== */
 
-.form-group {
-
-    margin-bottom: 18px;
+.formGroup {
+    margin-bottom: 20px;
 }
 
-.form-group label {
-
+.formGroup label {
     display: block;
-
     margin-bottom: 8px;
-
     color: #cbd5e1;
-
     font-size: 14px;
 }
 
-.form-group input,
-.form-group select {
-
+.formGroup input {
     width: 100%;
-
     background: #1e293b;
-
     border: 1px solid #334155;
-
     color: white;
-
     padding: 12px;
-
     border-radius: 10px;
-
     outline: none;
 }
 
-.form-group input:focus,
-.form-group select:focus {
-
+.formGroup input:focus {
     border-color: #6366f1;
 }
 
 /* ==========================================
-   TEAMS
+   PLAYERS LIST
 ========================================== */
 /* ==========================================
-   TEAMS LIST
+   PLAYERS LIST
 ========================================== */
 
-.teams-list {
+.playersList {
 
     background: #1e293b;
 
@@ -460,18 +308,17 @@ tbody tr:last-child td {
     overflow-y: auto;
 
     overflow-x: hidden;
-
 }
 
 /* Scrollbar */
 
-.teams-list::-webkit-scrollbar {
+.playersList::-webkit-scrollbar {
 
     width: 8px;
 
 }
 
-.teams-list::-webkit-scrollbar-thumb {
+.playersList::-webkit-scrollbar-thumb {
 
     background: #6366f1;
 
@@ -479,15 +326,15 @@ tbody tr:last-child td {
 
 }
 
-.teams-list::-webkit-scrollbar-track {
+.playersList::-webkit-scrollbar-track {
 
     background: #111827;
 
 }
 
-/* Each Team */
+/* Player Row */
 
-.team-item {
+.playerItem {
 
     display: flex;
 
@@ -511,7 +358,7 @@ tbody tr:last-child td {
 
 }
 
-.team-item:hover {
+.playerItem:hover {
 
     background: #273449;
 
@@ -519,9 +366,9 @@ tbody tr:last-child td {
 
 }
 
-.team-item.selected {
+.playerItem.selected {
 
-    background: rgba(79, 70, 229, .18);
+    background: rgba(79,70,229,.20);
 
     border-color: #6366f1;
 
@@ -529,7 +376,7 @@ tbody tr:last-child td {
 
 /* Bigger Checkbox */
 
-.team-item input[type="checkbox"] {
+.playerItem input[type="checkbox"] {
 
     width: 20px;
 
@@ -543,9 +390,9 @@ tbody tr:last-child td {
 
 }
 
-/* Team Name */
+/* Player Name */
 
-.team-name {
+.playerName {
 
     color: white;
 
@@ -556,59 +403,40 @@ tbody tr:last-child td {
     word-break: break-word;
 
 }
-
 /* ==========================================
    MODAL BUTTONS
 ========================================== */
 
-.modal-buttons {
-
+.modalButtons {
     display: flex;
-
     justify-content: flex-end;
-
     gap: 12px;
-
     margin-top: 24px;
 }
 
-.cancel-btn {
-
+.cancelBtn {
     background: #334155;
-
     color: white;
-
     border: none;
-
     padding: 11px 18px;
-
     border-radius: 10px;
-
     cursor: pointer;
 }
 
-.cancel-btn:hover {
-
+.cancelBtn:hover {
     background: #475569;
 }
 
-.save-btn {
-
+.saveBtn {
     background: #4f46e5;
-
     color: white;
-
     border: none;
-
-    padding: 11px 20px;
-
+    padding: 11px 22px;
     border-radius: 10px;
-
     cursor: pointer;
 }
 
-.save-btn:hover {
-
+.saveBtn:hover {
     background: #4338ca;
 }
 
@@ -616,63 +444,51 @@ tbody tr:last-child td {
    RESPONSIVE
 ========================================== */
 
-@media (max-width:900px) {
+@media (max-width:900px){
 
-    .page-header {
+.pageHeader{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
 
-        flex-direction: column;
+.searchBox{
+    width:100%;
+}
+.playersList{
 
-        align-items: flex-start;
+    grid-template-columns:1fr;
 
-        gap: 18px;
-
-    }
-
-    .search-box {
-
-        width: 100%;
-
-    }
-
-    .actions {
-
-        flex-direction: column;
-
-    }
-
-    .teams-list {
-
-        grid-template-columns: 1fr;
-
-        max-height: 300px;
-
-    }
+    max-height:300px;
 
 }
 
-@media (max-width:700px) {
-
-    .table-card {
-
-        overflow-x: auto;
-
-    }
-
-    table {
-
-        min-width: 900px;
-
-    }
-
-    .page-title {
-
-        font-size: 28px;
-
-    }
+.actions{
+    flex-direction:column;
+}
 
 }
 
-.error-message {
+@media (max-width:700px){
+
+.tableCard{
+    overflow-x:auto;
+}
+
+table{
+    min-width:700px;
+}
+
+.pageTitle{
+    font-size:28px;
+}
+
+.modalCard{
+    padding:20px;
+}
+
+}
+.errorMessage {
     background: rgba(239, 68, 68, 0.15);
     border: 1px solid #ef4444;
     color: #f87171;

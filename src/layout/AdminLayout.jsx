@@ -3,21 +3,21 @@ import { Outlet } from "react-router-dom";
 import AdminSidebar from "../components/admin/AdminSidebar";
 import AdminHeader from "../components/admin/AdminHeader";
 
-import "../styles/admin/layout/AdminLayout.css";
+import styles from "../styles/admin/layout/AdminLayout.module.css";
 
 function AdminLayout() {
 
     return (
 
-        <div className="layout">
+        <div className={styles.layout}>
 
             <AdminSidebar />
 
-            <div className="main">
+            <div className={styles.main}>
 
                 <AdminHeader />
 
-                <main className="page">
+                <main className={styles.page}>
 
                     <Outlet />
 

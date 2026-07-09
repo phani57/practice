@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/Teams.module.css";
 import { useEffect, useState } from "react";
 
 function TeamModal({
@@ -185,12 +186,12 @@ function TeamModal({
   }
 
   return (
-    <div className="modal-backdrop">
-      <div className="modal-card">
+    <div className={styles.modalBackdrop}>
+      <div className={styles.modalCard}>
         <h2>{isEditMode ? "Edit Team" : "Add Team"}</h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          <div className={styles.formGroup}>
             <label>Team Name</label>
 
             <input
@@ -201,17 +202,17 @@ function TeamModal({
             />
           </div>
 
-          <div className="form-group">
+          <div className={styles.formGroup}>
             <label>Select Players</label>
 
-            <div className="players-list">
+            <div className={styles.playersList}>
               {players.map((player) => (
                 <label
                   key={player.id}
                   className={
                     form.players.includes(player.id)
-                      ? "player-item selected"
-                      : "player-item"
+                      ? `${styles.playerItem} ${styles.selected}`
+                      : styles.playerItem
                   }
                 >
                   <input
@@ -221,16 +222,16 @@ function TeamModal({
                     onChange={handlePlayerChange}
                   />
 
-                  <span className="player-name">{player.player_name}</span>
+                  <span className={styles.playerName}>{player.player_name}</span>
                 </label>
               ))}
             </div>
           </div>
 
-          <div className="modal-buttons">
+          <div className={styles.modalButtons}>
             <button
               type="button"
-              className="cancel-btn"
+              className={styles.cancelBtn}
               onClick={() => {
                 localStorage.removeItem("teamModalDraft");
 
@@ -240,7 +241,7 @@ function TeamModal({
               Cancel
             </button>
 
-            <button className="save-btn" type="submit">
+            <button className={styles.saveBtn} type="submit">
               {isEditMode ? "Update Team" : "Save Team"}
             </button>
           </div>

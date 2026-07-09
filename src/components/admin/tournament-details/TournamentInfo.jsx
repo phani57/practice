@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/TournamentDetails.module.css";
 function TournamentInfo({ tournament }) {
   return (
     <>
@@ -5,14 +6,14 @@ function TournamentInfo({ tournament }) {
                 PAGE HEADER
             =========================== */}
 
-      <div className="page-header">
+      <div className={styles.pageHeader}>
         <div>
-          <p className="page-subtitle">Tournament Details</p>
+          <p className={styles.pageSubtitle}>Tournament Details</p>
 
-          <h1 className="page-title">{tournament.name}</h1>
+          <h1 className={styles.pageTitle}>{tournament.name}</h1>
         </div>
 
-        <div className={`status-badge ${tournament.status.toLowerCase()}`}>
+        <div className={`${styles.statusBadge} ${styles[tournament.status.toLowerCase()] || ''}`}>
           {tournament.status}
         </div>
       </div>
@@ -21,14 +22,14 @@ function TournamentInfo({ tournament }) {
                 TOURNAMENT INFO
             =========================== */}
 
-      <div className="info-card">
-        <div className="info-item">
+      <div className={styles.infoCard}>
+        <div className={styles.infoItem}>
           <span>Start Date</span>
 
           <strong>{tournament.start_date}</strong>
         </div>
 
-        <div className="info-item">
+        <div className={styles.infoItem}>
           <span>End Date</span>
 
           <strong>{tournament.end_date}</strong>
@@ -39,12 +40,12 @@ function TournamentInfo({ tournament }) {
                 PARTICIPATING TEAMS
             =========================== */}
 
-      <div className="card">
+      <div className={styles.card}>
         <h2>Participating Teams</h2>
 
-        <div className="teams">
+        <div className={styles.teams}>
           {tournament.teams.map((team) => (
-            <span key={team.id} className="team-chip">
+            <span key={team.id} className={styles.teamChip}>
               {team.team_name}
             </span>
           ))}

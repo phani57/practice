@@ -1,18 +1,19 @@
+import styles from "../../../styles/admin/Players.module.css";
 function PlayersHeader({ onAddPlayer }) {
 
     return (
 
-        <div className="page-header">
+        <div className={styles.pageHeader}>
 
             <div>
 
-                <p className="page-subtitle">
+                <p className={styles.pageSubtitle}>
 
                     Player Management
 
                 </p>
 
-                <h1 className="page-title">
+                <h1 className={styles.pageTitle}>
 
                     Players
 
@@ -22,7 +23,7 @@ function PlayersHeader({ onAddPlayer }) {
 
             <button
 
-                className="primary-btn"
+                className={styles.primaryBtn}
 
                 onClick={onAddPlayer}
 

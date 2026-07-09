@@ -1,4 +1,5 @@
-import "../../styles/admin/TournamentDetails.css";
+import styles from "../../styles/admin/TournamentDetails.module.css";
+import { toast } from "react-toastify";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -9,6 +10,7 @@ import tournamentService from "../../services/admin/tournamentService";
 import TournamentInfo from "../../components/admin/tournament-details/TournamentInfo";
 import MatchForm from "../../components/admin/tournament-details/MatchForm";
 import MatchesTable from "../../components/admin/tournament-details/MatchesTable";
+import ConfirmModal from "../../components/common/ConfirmModal";
 
 function TournamentDetails() {
   const { id } = useParams();
@@ -26,6 +28,9 @@ function TournamentDetails() {
   const [successMessage, setSuccessMessage] = useState("");
 
   const [validationMessage, setValidationMessage] = useState("");
+
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+  const [deleteTargetId, setDeleteTargetId] = useState(null);
 
   useEffect(() => {
     loadTournament();
@@ -123,14 +128,19 @@ function TournamentDetails() {
     }
   }
 
+  // Open confirm modal for deleting a match
+  function handleDeleteClick(matchId) {
+    setDeleteTargetId(matchId);
+    setIsConfirmOpen(true);
+  }
+
   // Delete selected match
-  async function deleteMatch(matchId) {
-    if (!window.confirm("Delete Match?")) {
-      return;
-    }
+  async function deleteMatch() {
+    setIsConfirmOpen(false);
+    if (!deleteTargetId) return;
 
     try {
-      await tournamentService.deleteMatch(matchId);
+      await tournamentService.deleteMatch(deleteTargetId);
 
       loadTournament();
     } catch (error) {
@@ -160,9 +170,9 @@ function TournamentDetails() {
     try {
       const response = await tournamentService.generateLeaderboard(matchId);
 
-      alert(response.message);
+      toast.success(response.message);
     } catch (error) {
-      alert(error.response?.data?.message);
+      toast.error(error.response?.data?.message);
     }
   }
 
@@ -176,7 +186,7 @@ function TournamentDetails() {
   }
 
   return (
-    <div className="details-container">
+    <div className={styles.detailsContainer}>
       <TournamentInfo tournament={tournament} />
 
       <MatchForm
@@ -194,11 +204,19 @@ function TournamentDetails() {
       <MatchesTable
         matches={tournament.matches}
         onEdit={editMatch}
-        onDelete={deleteMatch}
+        onDelete={handleDeleteClick}
         onPlayers={managePlayers}
         onScores={manageScores}
         onGenerate={generateLeaderboard}
         onLeaderboard={viewLeaderboard}
+      />
+
+      <ConfirmModal
+        open={isConfirmOpen}
+        title="Delete Match"
+        message="Are you sure you want to delete this match? This action cannot be undone."
+        onConfirm={deleteMatch}
+        onCancel={() => setIsConfirmOpen(false)}
       />
     </div>
   );

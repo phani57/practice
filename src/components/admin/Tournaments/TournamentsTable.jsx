@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/AdminTournaments.module.css";
 function TournamentsTable({
   tournaments,
 
@@ -8,7 +9,7 @@ function TournamentsTable({
   onView,
 }) {
   return (
-    <div className="table-card">
+    <div className={styles.tableCard}>
       <table>
         <thead>
           <tr>
@@ -37,13 +38,7 @@ function TournamentsTable({
 
               <td>
                 <span
-                  className={`status ${
-                    tournament.status === "Live"
-                      ? "live"
-                      : tournament.status === "Upcoming"
-                        ? "upcoming"
-                        : "completed"
-                  }`}
+                  className={`${styles.status} ${ tournament.status === "Live" ? styles.live : tournament.status === "Upcoming" ? styles.upcoming : styles.completed }`}
                 >
                   {tournament.status}
                 </span>
@@ -51,20 +46,20 @@ function TournamentsTable({
 
               <td>{tournament.teams.length}</td>
 
-              <td className="actions">
-                <button className="edit-btn" onClick={() => onEdit(tournament)}>
+              <td className={styles.actions}>
+                <button className={styles.editBtn} onClick={() => onEdit(tournament)}>
                   Edit
                 </button>
 
                 <button
-                  className="delete-btn"
+                  className={styles.deleteBtn}
                   onClick={() => onDelete(tournament.id)}
                 >
                   Delete
                 </button>
 
                 <button
-                  className="view-btn"
+                  className={styles.viewBtn}
                   onClick={() => onView(tournament.id)}
                 >
                   View

@@ -1,3 +1,5 @@
+import styles from "../../../styles/admin/TournamentDetails.module.css";
+
 function MatchesTable({
   matches,
 
@@ -14,10 +16,10 @@ function MatchesTable({
   onLeaderboard,
 }) {
   return (
-    <div className="card">
+    <div className={styles.card}>
       <h2>Tournament Matches</h2>
 
-      <div className="table-wrapper">
+      <div className={styles.tableWrapper}>
         <table>
           <thead>
             <tr>
@@ -42,47 +44,47 @@ function MatchesTable({
 
                 <td>
                   <span
-                    className={`status-badge ${match.status.toLowerCase()}`}
+                    className={`${styles.statusBadge} ${styles[match.status.toLowerCase()] || ''}`}
                   >
                     {match.status}
                   </span>
                 </td>
 
-                <td className="actions">
-                  <button className="edit-btn" onClick={() => onEdit(match)}>
+                <td className={styles.actions}>
+                  <button className={styles.editBtn} onClick={() => onEdit(match)}>
                     Edit
                   </button>
 
                   <button
-                    className="delete-btn"
+                    className={styles.deleteBtn}
                     onClick={() => onDelete(match.id)}
                   >
                     Delete
                   </button>
 
                   <button
-                    className="view-btn"
+                    className={styles.viewBtn}
                     onClick={() => onPlayers(match.id)}
                   >
                     Playing XI
                   </button>
 
                   <button
-                    className="primary-btn"
+                    className={styles.primaryBtn}
                     onClick={() => onScores(match.id)}
                   >
                     Scores
                   </button>
 
                   <button
-                    className="secondary-btn"
+                    className={styles.secondaryBtn}
                     onClick={() => onGenerate(match.id)}
                   >
                     Generate
                   </button>
 
                   <button
-                    className="primary-btn"
+                    className={styles.primaryBtn}
                     onClick={() => onLeaderboard(match.id)}
                   >
                     Leaderboard

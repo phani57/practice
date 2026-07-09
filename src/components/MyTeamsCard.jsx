@@ -1,11 +1,11 @@
-// import "./MyTeams.css";
+import styles from "../styles/pages/MyTeams.module.css";
 function TeamCard({
 
     team,
 
     expanded,
 
-    onToggle,
+    onView,
 
     onDelete,
 
@@ -15,9 +15,9 @@ function TeamCard({
 
     return (
 
-        <div className="team-card">
+        <div className={styles.teamCard}>
 
-            <div className="card-top">
+            <div className={styles.cardTop}>
 
                 <h2>
 
@@ -26,7 +26,7 @@ function TeamCard({
                 </h2>
 
                 <span
-                    className={`status ${team.match.status.toLowerCase()}`}
+                    className={`${styles.status} ${styles[team.match.status.toLowerCase()] || ''}`}
                 >
 
                     {team.match.status}
@@ -35,21 +35,21 @@ function TeamCard({
 
             </div>
 
-            <div className="match-box">
+            <div className={styles.matchBox}>
 
-                <div className="team-name">
+                <div className={styles.teamName}>
 
                     {team.match.team1.team_name}
 
                 </div>
 
-                <div className="vs">
+                <div className={styles.vs}>
 
                     VS
 
                 </div>
 
-                <div className="team-name">
+                <div className={styles.teamName}>
 
                     {team.match.team2.team_name}
 
@@ -57,22 +57,20 @@ function TeamCard({
 
             </div>
 
-            <div className="match-date">
+            <div className={styles.matchDate}>
 
                 📅 {team.match.match_date}
 
             </div>
 
-            <div className="actions">
+            <div className={styles.actions}>
 
                 <button
-                    className="view-btn"
-                    onClick={() => onToggle(team.id)}
+                    className={styles.viewBtn}
+                    onClick={() => onView(team.id)}
                 >
 
-                    {expanded
-                        ? "Hide Team"
-                        : "View Team"}
+                    View Team
 
                 </button>
 
@@ -82,7 +80,7 @@ function TeamCard({
                         ?
 
                         <button
-                            className="edit-btn"
+                            className={styles.editBtn}
                             onClick={() => onEdit(team.id)}
                         >
 
@@ -93,7 +91,7 @@ function TeamCard({
                         :
 
                         <button
-                            className="locked-btn"
+                            className={styles.lockedBtn}
                             disabled
                         >
 
@@ -103,7 +101,7 @@ function TeamCard({
                 }
 
                 <button
-                    className="delete-btn"
+                    className={styles.deleteBtn}
                     onClick={() => onDelete(team.id)}
                 >
 
@@ -113,80 +111,7 @@ function TeamCard({
 
             </div>
 
-            {
 
-                expanded && (
-
-                    <div className="players-section">
-
-                        <h3>
-
-                            Selected Players
-
-                        </h3>
-
-                        <div className="players-grid">
-
-                            {
-
-                                team.players.map(player => (
-
-                                    <div
-                                        key={player.id}
-                                        className="player-card"
-                                    >
-
-                                        <span>
-
-                                            {player.player_name}
-
-                                        </span>
-
-                                        <div className="badges">
-
-                                            {
-
-                                                player.pivot.is_captain === 1 && (
-
-                                                    <span className="captain">
-
-                                                        C
-
-                                                    </span>
-
-                                                )
-
-                                            }
-
-                                            {
-
-                                                player.pivot.is_vice_captain === 1 && (
-
-                                                    <span className="vice">
-
-                                                        VC
-
-                                                    </span>
-
-                                                )
-
-                                            }
-
-                                        </div>
-
-                                    </div>
-
-                                ))
-
-                            }
-
-                        </div>
-
-                    </div>
-
-                )
-
-            }
 
         </div>
 

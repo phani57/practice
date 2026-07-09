@@ -1,4 +1,4 @@
-import "../../styles/admin/layout/AdminHeader.css";
+import styles from "../../styles/admin/layout/AdminHeader.module.css";
 import { useNavigate } from "react-router-dom";
 import authService from "../../services/authService";
 
@@ -19,13 +19,13 @@ function AdminHeader() {
 
     return (
 
-        <header className="admin-header">
+        <header className={styles.adminHeader}>
 
-            <div className="header-left">
+            <div className={styles.headerLeft}>
 
-                <div className="page-info">
+                <div className={styles.pageInfo}>
 
-                    <p className="page-label">
+                    <p className={styles.pageLabel}>
 
                         ADMIN PANEL
 
@@ -41,25 +41,25 @@ function AdminHeader() {
 
             </div>
 
-            <div className="header-right">
+            <div className={styles.headerRight}>
 
-                <div className="admin-profile">
+                <div className={styles.adminProfile}>
 
-                    <div className="avatar">
+                    <div className={styles.avatar}>
 
                         A
 
                     </div>
 
-                    <div className="admin-info">
+                    <div className={styles.adminInfo}>
 
-                        <span className="admin-name">
+                        <span className={styles.adminName}>
 
                             {user.name}
 
                         </span>
 
-                        <span className="admin-role">
+                        <span className={styles.adminRole}>
 
                             {user.role}
 
@@ -72,7 +72,7 @@ function AdminHeader() {
 
                 <button
 
-                    className="logout-btn"
+                    className={styles.logoutBtn}
 
                     onClick={logout}
 

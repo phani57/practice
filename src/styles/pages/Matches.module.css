@@ -1,10 +1,10 @@
-.matches-container {
+.matchesContainer {
     padding: 24px;
     background: #f8fafc;
     min-height: calc(100vh - 70px);
 }
 
-.matches-container h1 {
+.matchesContainer h1 {
     margin-bottom: 24px;
 
     font-size: 28px;
@@ -12,7 +12,7 @@
 
     color: #111827;
 }
-.match-header{
+.matchHeader{
 
     display:flex;
 
@@ -24,7 +24,7 @@
 
 }
 
-.match-header h2{
+.matchHeader h2{
 
     margin:0;
 
@@ -43,7 +43,7 @@
     margin:0 8px;
 
 }
-.live-btn{
+.liveBtn{
 
     background:#f59e0b;
 
@@ -59,7 +59,7 @@
 
 }
 
-.match-card {
+.matchCard {
     background: white;
 
     border-radius: 16px;
@@ -74,14 +74,14 @@
     transition: all 0.3s ease;
 }
 
-.match-card:hover {
+.matchCard:hover {
     transform: translateY(-4px);
 
     box-shadow:
         0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
-.match-card h2 {
+.matchCard h2 {
     margin-bottom: 14px;
 
     font-size: 22px;
@@ -90,7 +90,7 @@
     color: #111827;
 }
 
-.match-card p {
+.matchCard p {
     margin-bottom: 8px;
 
     color: #4b5563;
@@ -98,12 +98,12 @@
     font-size: 15px;
 }
 
-.match-card p:first-of-type {
+.matchCard p:first-of-type {
     color: #10b981;
     font-weight: 600;
 }
 
-.match-card button {
+.matchCard button {
     margin-top: 16px;
 
     border: none;
@@ -123,11 +123,11 @@
     transition: 0.3s ease;
 }
 
-.match-card button:hover {
+.matchCard button:hover {
     background: #1d4ed8;
 }
 
-.empty-state {
+.emptyState {
     text-align: center;
 
     padding: 40px;
@@ -143,15 +143,15 @@
 }
 
 @media (max-width: 768px) {
-    .matches-container {
+    .matchesContainer {
         padding: 15px;
     }
 
-    .matches-container h1 {
+    .matchesContainer h1 {
         font-size: 24px;
     }
 
-    .match-card h2 {
+    .matchCard h2 {
         font-size: 18px;
     }
 }
@@ -165,7 +165,7 @@
     color: #6b7280;
 }
 
-.status-badge{
+.statusBadge{
 
     padding:8px 18px;
 
@@ -181,7 +181,7 @@
 
 }
 
-.status-badge.upcoming{
+.statusBadge.upcoming{
 
     background:#dcfce7;
 
@@ -189,7 +189,7 @@
 
 }
 
-.status-badge.live{
+.statusBadge.live{
 
     background:#fee2e2;
 
@@ -199,7 +199,7 @@
 
 }
 
-.status-badge.completed{
+.statusBadge.completed{
 
     background:#e5e7eb;
 
@@ -239,7 +239,7 @@
     font-size:15px;
 
 }
-.create-team-btn{
+.createTeamBtn{
 
     background:linear-gradient(135deg,#2563eb,#1d4ed8);
 
@@ -259,14 +259,14 @@
 
 }
 
-.create-team-btn:hover{
+.createTeamBtn:hover{
 
     transform:translateY(-2px);
 
     box-shadow:0 8px 18px rgba(37,99,235,.35);
 
 }
-.live-btn{
+.liveBtn{
 
     background:#ef4444;
 
@@ -281,7 +281,7 @@
     font-weight:700;
 
 }
-.closed-btn{
+.closedBtn{
 
     background:#9ca3af;
 
@@ -296,17 +296,17 @@
     font-weight:700;
 
 }
-.match-card.upcoming{
+.matchCard.upcoming{
 
     border-left:6px solid #22c55e;
 
 }
-.match-card.live{
+.matchCard.live{
 
     border-left:6px solid #ef4444;
 
 }
-.match-card.completed{
+.matchCard.completed{
 
     border-left:6px solid #9ca3af;
 

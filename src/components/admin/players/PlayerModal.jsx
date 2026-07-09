@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/Players.module.css";
 import { useState, useEffect } from "react";
 
 function PlayerModal({show,isEditMode,editingPlayer,onClose,onSave}) {
@@ -132,9 +133,9 @@ function PlayerModal({show,isEditMode,editingPlayer,onClose,onSave}) {
 
     return (
 
-        <div className="modal-backdrop">
+        <div className={styles.modalBackdrop}>
 
-            <div className="modal-card">
+            <div className={styles.modalCard}>
 
                 <h2>
 
@@ -156,7 +157,7 @@ function PlayerModal({show,isEditMode,editingPlayer,onClose,onSave}) {
 
                 <form onSubmit={handleSubmit}>
 
-                    <div className="form-group">
+                    <div className={styles.formGroup}>
 
                         <label>
 
@@ -180,7 +181,7 @@ function PlayerModal({show,isEditMode,editingPlayer,onClose,onSave}) {
 
                     </div>
 
-                    <div className="form-group">
+                    <div className={styles.formGroup}>
 
                         <label>
 
@@ -204,7 +205,7 @@ function PlayerModal({show,isEditMode,editingPlayer,onClose,onSave}) {
 
                     </div>
 
-                    <div className="form-group">
+                    <div className={styles.formGroup}>
 
                         <label>
 
@@ -226,7 +227,7 @@ function PlayerModal({show,isEditMode,editingPlayer,onClose,onSave}) {
 
                     </div>
 
-                    <div className="form-group">
+                    <div className={styles.formGroup}>
 
                         <label>
 
@@ -248,13 +249,13 @@ function PlayerModal({show,isEditMode,editingPlayer,onClose,onSave}) {
 
                     </div>
 
-                    <div className="modal-buttons">
+                    <div className={styles.modalButtons}>
 
                         <button
 
                             type="button"
 
-                            className="cancel-btn"
+                            className={styles.cancelBtn}
 
                             onClick={onClose}
 
@@ -268,7 +269,7 @@ function PlayerModal({show,isEditMode,editingPlayer,onClose,onSave}) {
 
                             type="submit"
 
-                            className="save-btn"
+                            className={styles.saveBtn}
 
                         >
 

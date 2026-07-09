@@ -1,15 +1,15 @@
-import "../../styles/admin/layout/AdminSidebar.css";
+import styles from "../../styles/admin/layout/AdminSidebar.module.css";
 import { NavLink } from "react-router-dom";
 
 function AdminSidebar() {
 
     return (
 
-        <div className="sidebar">
+        <div className={styles.sidebar}>
 
-            <div className="logo">
+            <div className={styles.logo}>
 
-                <div className="logo-icon">
+                <div className={styles.logoIcon}>
 
                     🏆
 
@@ -37,7 +37,7 @@ function AdminSidebar() {
 
                 <NavLink to="/admin/dashboard">
 
-                    <span className="icon">
+                    <span className={styles.icon}>
 
                         🏠
 
@@ -53,7 +53,7 @@ function AdminSidebar() {
 
                 <NavLink to="/admin/AdminTournaments">
 
-                    <span className="icon">
+                    <span className={styles.icon}>
 
                         🏆
 
@@ -69,7 +69,7 @@ function AdminSidebar() {
 
                 <NavLink to="/admin/teams">
 
-                    <span className="icon">
+                    <span className={styles.icon}>
 
                         👥
 
@@ -85,7 +85,7 @@ function AdminSidebar() {
 
                 <NavLink to="/admin/players">
 
-                    <span className="icon">
+                    <span className={styles.icon}>
 
                         🏏
 
@@ -101,7 +101,7 @@ function AdminSidebar() {
 
                 <NavLink to="/admin/users">
 
-                    <span className="icon">
+                    <span className={styles.icon}>
 
                         👤
 
@@ -117,7 +117,7 @@ function AdminSidebar() {
 
                 <NavLink to="/admin/global-leaderboard">
 
-                    <span className="icon">
+                    <span className={styles.icon}>
 
                         📊
 
@@ -131,11 +131,11 @@ function AdminSidebar() {
 
                 </NavLink>
 
-                <div className="bottom-menu">
+                <div className={styles.bottomMenu}>
 
                     <NavLink to="/admin/recycle-bin">
 
-                        <span className="icon">
+                        <span className={styles.icon}>
 
                             🗑
 

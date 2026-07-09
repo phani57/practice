@@ -1,4 +1,4 @@
-import "../../styles/admin/MatchScores.css";
+import styles from "../../styles/admin/MatchScores.module.css";
 
 import { useEffect, useState } from "react";
 
@@ -124,24 +124,24 @@ function MatchScores() {
   }
 
   return (
-    <div className="scores-container">
-      <div className="page-header">
+    <div className={styles.scoresContainer}>
+      <div className={styles.pageHeader}>
         <div>
-          <p className="page-subtitle">Match Score Management</p>
+          <p className={styles.pageSubtitle}>Match Score Management</p>
 
-          <h1 className="page-title">
+          <h1 className={styles.pageTitle}>
             {match.team1.team_name} VS {match.team2.team_name}
           </h1>
         </div>
       </div>
 
       {successMessage && (
-        <div className="success-message">{successMessage}</div>
+        <div className={styles.successMessage}>{successMessage}</div>
       )}
 
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
 
-      <div className="table-card">
+      <div className={styles.tableCard}>
         <table>
           <thead>
             <tr>
@@ -159,12 +159,12 @@ function MatchScores() {
                 <td>{player.player.player_name}</td>
 
                 <td>
-                  <span className="current-score">{player.current_score}</span>
+                  <span className={styles.currentScore}>{player.current_score}</span>
                 </td>
 
                 <td>
                   <input
-                    className="score-input"
+                    className={styles.scoreInput}
                     type="number"
                     value={scores[player.player.id] ?? ""}
                     onChange={(e) =>
@@ -182,8 +182,8 @@ function MatchScores() {
         </table>
       </div>
 
-      <div className="save-section">
-        <button className="save-btn" onClick={saveScores}>
+      <div className={styles.saveSection}>
+        <button className={styles.saveBtn} onClick={saveScores}>
           Save Scores
         </button>
       </div>

@@ -1,4 +1,5 @@
-import "../styles/pages/CreateTeam.css";
+import styles from "../styles/pages/CreateTeam.module.css";
+import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -167,7 +168,7 @@ function CreateTeam() {
 
         if (!teamName.trim()) {
 
-            alert("Please enter team name");
+            toast.warning("Please enter team name");
 
             return;
 
@@ -175,7 +176,7 @@ function CreateTeam() {
 
         if (selectedPlayers.length !== 11) {
 
-            alert("Please select 11 players");
+            toast.warning("Please select 11 players");
 
             return;
 
@@ -183,7 +184,7 @@ function CreateTeam() {
 
         if (!captain) {
 
-            alert("Please select captain");
+            toast.warning("Please select captain");
 
             return;
 
@@ -191,7 +192,7 @@ function CreateTeam() {
 
         if (!viceCaptain) {
 
-            alert("Please select vice captain");
+            toast.warning("Please select vice captain");
 
             return;
 
@@ -252,7 +253,7 @@ function CreateTeam() {
         catch (error) {
 
             console.log(error);
-            alert(
+            toast.error(
 
                 error.response?.data?.message ||
 
@@ -266,7 +267,7 @@ function CreateTeam() {
 
     return (
 
-        <div className="page-container">
+        <div className={styles.pageContainer}>
 
             <h1>
 
@@ -274,7 +275,7 @@ function CreateTeam() {
 
             </h1>
 
-            <p className="match-info">
+            <p className={styles.matchInfo}>
 
                 Match ID : {id}
 
@@ -282,7 +283,7 @@ function CreateTeam() {
 
             <TeamSummary onSave={saveTeam} />
 
-            <div className="players-grid">
+            <div className={styles.playersGrid}>
 
                 <TeamColumn
 

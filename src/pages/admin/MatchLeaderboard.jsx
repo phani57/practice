@@ -1,4 +1,4 @@
-import "../../styles/admin/MatchLeaderboard.css";
+import styles from "../../styles/admin/MatchLeaderboard.module.css";
 
 import { useEffect, useState } from "react";
 
@@ -49,19 +49,19 @@ function MatchLeaderboard() {
 
     return (
 
-        <div className="leaderboard-container">
+        <div className={styles.leaderboardContainer}>
 
-            <div className="page-header">
+            <div className={styles.pageHeader}>
 
                 <div>
 
-                    <p className="page-subtitle">
+                    <p className={styles.pageSubtitle}>
 
                         Match Leaderboard
 
                     </p>
 
-                    <h1 className="page-title">
+                    <h1 className={styles.pageTitle}>
 
                         {match.team1.team_name}
 
@@ -75,7 +75,7 @@ function MatchLeaderboard() {
 
             </div>
 
-            <div className="table-card">
+            <div className={styles.tableCard}>
 
                 <table>
 

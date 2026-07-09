@@ -1,3 +1,4 @@
+import styles from "../../styles/pages/CreateTeam.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setTeamName } from "../../redux/teamSlice";
 
@@ -43,9 +44,9 @@ function TeamSummary({ onSave }) {
 
     return (
 
-        <div className="summary-card">
+        <div className={styles.summaryCard}>
 
-            <div className="team-name-section">
+            <div className={styles.teamNameSection}>
 
                 <label>
 
@@ -75,7 +76,7 @@ function TeamSummary({ onSave }) {
 
             </div>
 
-            <div className="budget-card">
+            <div className={styles.budgetCard}>
 
                 <h2>
 
@@ -83,11 +84,11 @@ function TeamSummary({ onSave }) {
 
                 </h2>
 
-                <div className="budget-progress">
+                <div className={styles.budgetProgress}>
 
                     <div
 
-                        className="budget-fill"
+                        className={styles.budgetFill}
 
                         style={{
 
@@ -101,7 +102,7 @@ function TeamSummary({ onSave }) {
 
                 </div>
 
-                <div className="budget-percentage">
+                <div className={styles.budgetPercentage}>
 
                     {usedBudget} / 100 Used
 
@@ -109,7 +110,7 @@ function TeamSummary({ onSave }) {
 
             </div>
 
-            <div className="progress-section">
+            <div className={styles.progressSection}>
 
                 <h2>
 
@@ -117,7 +118,7 @@ function TeamSummary({ onSave }) {
 
                 </h2>
 
-                <div className="player-count">
+                <div className={styles.playerCount}>
 
                     {selectedPlayers.length}/11
 
@@ -129,7 +130,7 @@ function TeamSummary({ onSave }) {
 
                 errorMessage &&
 
-                <div className="error-message">
+                <div className={styles.errorMessage}>
 
                     {errorMessage}
 
@@ -137,9 +138,9 @@ function TeamSummary({ onSave }) {
 
             }
 
-            <div className="leadership">
+            <div className={styles.leadership}>
 
-                <div className="leader-card">
+                <div className={styles.leaderCard}>
 
                     <span>
 
@@ -167,7 +168,7 @@ function TeamSummary({ onSave }) {
 
                 </div>
 
-                <div className="leader-card">
+                <div className={styles.leaderCard}>
 
                     <span>
 
@@ -199,7 +200,7 @@ function TeamSummary({ onSave }) {
 
             <button
 
-                className="save-btn"
+                className={styles.saveBtn}
 
                 onClick={onSave}
 

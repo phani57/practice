@@ -2,7 +2,7 @@
    PAGE
 ========================================== */
 
-.playingxi-container{
+.playingxiContainer{
 
     color:white;
 }
@@ -11,12 +11,12 @@
    HEADER
 ========================================== */
 
-.page-header{
+.pageHeader{
 
     margin-bottom:30px;
 }
 
-.page-subtitle{
+.pageSubtitle{
 
     margin:0;
 
@@ -31,7 +31,7 @@
     font-weight:700;
 }
 
-.page-title{
+.pageTitle{
 
     margin-top:8px;
 
@@ -46,7 +46,7 @@
    TEAM GRID
 ========================================== */
 
-.teams-grid{
+.teamsGrid{
 
     display:grid;
 
@@ -59,7 +59,7 @@
    TEAM CARD
 ========================================== */
 
-.team-card{
+.teamCard{
 
     background:#111827;
 
@@ -70,24 +70,87 @@
     padding:24px;
 }
 
-.team-card h2{
+.teamCard h2{
 
-    margin-bottom:20px;
+    margin-bottom:0;
 
     font-size:22px;
 
     color:white;
 
+}
+
+/* ==========================================
+   TEAM HEADER
+========================================== */
+
+.teamHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
     padding-bottom:12px;
 
     border-bottom:1px solid #334155;
+
+}
+
+.teamNameGroup{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.selectAllBtn{
+
+    padding:6px 12px;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    border-radius:6px;
+
+    border:1px solid #334155;
+
+    background:#1e293b;
+
+    color:white;
+
+    transition:.2s;
+
+}
+
+.selectAllBtn:hover{
+
+    background:#293548;
+
+}
+
+.selectionCount{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#94a3b8;
+
 }
 
 /* ==========================================
    PLAYERS
 ========================================== */
 
-.players-list{
+.playersList{
 
     display:flex;
 
@@ -96,7 +159,7 @@
     gap:12px;
 }
 
-.player-item{
+.playerItem{
 
     display:flex;
 
@@ -115,12 +178,12 @@
     transition:.2s;
 }
 
-.player-item:hover{
+.playerItem:hover{
 
     background:#293548;
 }
 
-.player-item input{
+.playerItem input{
 
     width:18px;
 
@@ -131,7 +194,7 @@
     cursor:pointer;
 }
 
-.player-item span{
+.playerItem span{
 
     color:white;
 
@@ -144,7 +207,7 @@
    SAVE BUTTON
 ========================================== */
 
-.save-section{
+.saveSection{
 
     display:flex;
 
@@ -153,7 +216,7 @@
     margin-top:30px;
 }
 
-.save-btn{
+.saveBtn{
 
     background:#4f46e5;
 
@@ -174,7 +237,7 @@
     transition:.25s;
 }
 
-.save-btn:hover{
+.saveBtn:hover{
 
     background:#4338ca;
 }
@@ -185,25 +248,25 @@
 
 @media(max-width:900px){
 
-.teams-grid{
+.teamsGrid{
 
 grid-template-columns:1fr;
 
 }
 
-.page-title{
+.pageTitle{
 
 font-size:28px;
 
 }
 
-.save-section{
+.saveSection{
 
 justify-content:center;
 
 }
 
-.save-btn{
+.saveBtn{
 
 width:100%;
 

@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/Dashboard.module.css";
 import { useNavigate } from "react-router-dom";
 
 import StatCard from "./StatCard";
@@ -14,7 +15,7 @@ function StatsGrid({ stats }) {
 
     return (
 
-        <div className="stats-grid">
+        <div className={styles.statsGrid}>
 
             <StatCard
 

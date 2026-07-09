@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/Teams.module.css";
 function TeamsTable({
 
     teams,
@@ -14,7 +15,7 @@ function TeamsTable({
 
         <>
 
-            <div className="table-card">
+            <div className={styles.tableCard}>
 
                 <table>
 
@@ -58,7 +59,7 @@ function TeamsTable({
 
                                             colSpan="3"
 
-                                            className="empty-state"
+                                            className={styles.emptyState}
 
                                         >
 
@@ -80,7 +81,7 @@ function TeamsTable({
 
                                             <button
 
-                                                className="team-link"
+                                                className={styles.teamLink}
 
                                                 onClick={() =>
 
@@ -102,11 +103,11 @@ function TeamsTable({
 
                                         </td>
 
-                                        <td className="actions">
+                                        <td className={styles.actions}>
 
                                             <button
 
-                                                className="edit-btn"
+                                                className={styles.editBtn}
 
                                                 onClick={() =>
 
@@ -122,7 +123,7 @@ function TeamsTable({
 
                                             <button
 
-                                                className="delete-btn"
+                                                className={styles.deleteBtn}
 
                                                 onClick={() =>
 

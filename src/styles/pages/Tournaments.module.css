@@ -1,4 +1,4 @@
-.tournaments-container{
+.tournamentsContainer{
 
     padding:30px;
 
@@ -10,7 +10,7 @@
 
 /* HERO */
 
-.hero-banner{
+.heroBanner{
 
     background:linear-gradient(135deg,#2563eb,#3b82f6);
 
@@ -32,7 +32,7 @@
 
 }
 
-.hero-tag{
+.heroTag{
 
     display:inline-block;
 
@@ -48,7 +48,7 @@
 
 }
 
-.hero-banner h1{
+.heroBanner h1{
 
     margin:0;
 
@@ -56,7 +56,7 @@
 
 }
 
-.hero-banner p{
+.heroBanner p{
 
     margin-top:12px;
 
@@ -64,13 +64,13 @@
 
 }
 
-.hero-icon{
+.heroIcon{
 
     font-size:70px;
 
 }
 
-.tournaments-grid{
+.tournamentsGrid{
 
     display:grid;
 
@@ -82,7 +82,7 @@
 
 @media(max-width:768px){
 
-.hero-banner{
+.heroBanner{
 
 flex-direction:column;
 
@@ -92,20 +92,20 @@ gap:20px;
 
 }
 
-.hero-icon{
+.heroIcon{
 
 display:none;
 
 }
 
 }
-.page-header{
+.pageHeader{
 
     margin-bottom:22px;
 
 }
 
-.page-header h1{
+.pageHeader h1{
 
     margin:0;
 
@@ -115,7 +115,7 @@ display:none;
 
 }
 
-.page-header p{
+.pageHeader p{
 
     margin-top:8px;
 
@@ -123,7 +123,7 @@ display:none;
 
 }
 
-.header-stats{
+.headerStats{
 
     display:grid;
 
@@ -135,7 +135,7 @@ display:none;
 
 }
 
-.mini-card{
+.miniCard{
 
     background:white;
 
@@ -153,13 +153,13 @@ display:none;
 
 }
 
-.mini-card span{
+.miniCard span{
 
     font-size:32px;
 
 }
 
-.mini-card h3{
+.miniCard h3{
 
     margin:0;
 
@@ -167,7 +167,7 @@ display:none;
 
 }
 
-.mini-card small{
+.miniCard small{
 
     color:#6b7280;
 

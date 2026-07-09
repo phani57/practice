@@ -1,4 +1,4 @@
-import "../styles/Pages/Login.css";
+import styles from "../styles/Pages/Login.module.css";
 import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -60,14 +60,14 @@ function Login() {
     }
 
     return (
-        <div className="auth-container">
-            <div className="auth-card">
+        <div className={styles.authContainer}>
+            <div className={styles.authCard}>
                 <form onSubmit={login}>
-                    <div className="logo">🏆</div>
+                    <div className={styles.logo}>🏆</div>
 
                     <h1>Fantasy League</h1>
 
-                    <p className="subtitle">
+                    <p className={styles.subtitle}>
                         Welcome back! Login to continue
                     </p>
 
@@ -86,7 +86,7 @@ function Login() {
                     />
 
                     {errorMessage && (
-                        <p className="error">
+                        <p className={styles.error}>
                             {errorMessage}
                         </p>
                     )}
@@ -98,7 +98,7 @@ function Login() {
                         {loading ? "Logging in..." : "Login"}
                     </button>
 
-                    <p className="auth-link">
+                    <p className={styles.authLink}>
                         Don't have an account?{" "}
                         <Link to="/register">
                             Register

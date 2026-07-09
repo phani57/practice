@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.auth-container {
+.authContainer {
 
     position: relative;
 
@@ -24,8 +24,8 @@
 
 /* Decorative Background */
 
-.auth-container::before,
-.auth-container::after {
+.authContainer::before,
+.authContainer::after {
 
     content: "";
 
@@ -38,7 +38,7 @@
     opacity: .18;
 }
 
-.auth-container::before {
+.authContainer::before {
 
     width: 320px;
     height: 320px;
@@ -49,7 +49,7 @@
     left: -120px;
 }
 
-.auth-container::after {
+.authContainer::after {
 
     width: 280px;
     height: 280px;
@@ -60,7 +60,7 @@
     bottom: -80px;
 }
 
-.auth-card {
+.authCard {
 
     position: relative;
     z-index: 2;
@@ -111,7 +111,7 @@
         translateY(-4px) rotate(-6deg);
 }
 
-.auth-card h1 {
+.authCard h1 {
 
     margin: 0;
 
@@ -137,7 +137,7 @@
     line-height: 1.6;
 }
 
-.auth-card input {
+.authCard input {
 
     width: 100%;
 
@@ -156,19 +156,19 @@
     transition: .3s;
 }
 
-.auth-card input::placeholder {
+.authCard input::placeholder {
 
     color: #9ca3af;
 }
 
-.auth-card input:hover {
+.authCard input:hover {
 
     border-color: #93c5fd;
 
     background: white;
 }
 
-.auth-card input:focus {
+.authCard input:focus {
 
     outline: none;
 
@@ -180,7 +180,7 @@
         0 0 0 4px rgba(37, 99, 235, .12);
 }
 
-.auth-card button {
+.authCard button {
 
     width: 100%;
 
@@ -208,7 +208,7 @@
         0 12px 24px rgba(37, 99, 235, .28);
 }
 
-.auth-card button:hover:not(:disabled) {
+.authCard button:hover:not(:disabled) {
 
     transform: translateY(-2px);
 
@@ -218,12 +218,12 @@
         0 18px 35px rgba(37, 99, 235, .38);
 }
 
-.auth-card button:active:not(:disabled) {
+.authCard button:active:not(:disabled) {
 
     transform: scale(.98);
 }
 
-.auth-card button:disabled {
+.authCard button:disabled {
 
     background: #cbd5e1;
 
@@ -232,7 +232,7 @@
     box-shadow: none;
 }
 
-.auth-link {
+.authLink {
 
     margin-top: 26px;
 
@@ -243,7 +243,7 @@
     color: #6b7280;
 }
 
-.auth-link a {
+.authLink a {
 
     color: #2563eb;
 
@@ -254,7 +254,7 @@
     transition: .25s;
 }
 
-.auth-link a:hover {
+.authLink a:hover {
 
     color: #1d4ed8;
 
@@ -297,7 +297,7 @@
 
 @media (max-width: 576px) {
 
-    .auth-card {
+    .authCard {
 
         padding: 34px 24px;
 
@@ -312,13 +312,13 @@
         font-size: 34px;
     }
 
-    .auth-card h1 {
+    .authCard h1 {
 
         font-size: 28px;
     }
 }
 
-.success-message {
+.successMessage {
 
     margin-top: 15px;
 

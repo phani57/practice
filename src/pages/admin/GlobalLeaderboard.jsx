@@ -1,4 +1,4 @@
-// import "../../styles/admin/leaderboard/Leaderboard.css";
+import styles from "../../styles/admin/GlobalLeaderboard.module.css";
 
 import { useEffect, useState } from "react";
 
@@ -34,23 +34,23 @@ function GlobalLeaderboard() {
 
     return (
 
-        <div className="leaderboard-container">
+        <div className={styles.leaderboardContainer}>
 
             {/* ==========================
                 PAGE HEADER
             ========================== */}
 
-            <div className="page-header">
+            <div className={styles.pageHeader}>
 
                 <div>
 
-                    <p className="page-subtitle">
+                    <p className={styles.pageSubtitle}>
 
                         Rankings
 
                     </p>
 
-                    <h1 className="page-title">
+                    <h1 className={styles.pageTitle}>
 
                         Global Leaderboard
 
@@ -64,7 +64,7 @@ function GlobalLeaderboard() {
                 LEADERBOARD TABLE
             ========================== */}
 
-            <div className="table-card">
+            <div className={styles.tableCard}>
 
                 <table>
 
@@ -98,7 +98,7 @@ function GlobalLeaderboard() {
 
                                             colSpan="4"
 
-                                            className="empty-state"
+                                            className={styles.emptyState}
 
                                         >
 
@@ -118,7 +118,7 @@ function GlobalLeaderboard() {
 
                                         <td>
 
-                                            <span className="rank-badge">
+                                            <span className={styles.rankBadge}>
 
                                                 #{user.rank}
 

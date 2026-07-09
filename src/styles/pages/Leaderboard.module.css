@@ -1,10 +1,10 @@
-.leaderboard-container {
+.leaderboardContainer {
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
 }
 
-.page-title {
+.pageTitle {
     text-align: center;
     margin-bottom: 35px;
     font-size: 2rem;
@@ -18,7 +18,7 @@
 
 }
 
-.leaderboard-card {
+.leaderboardCard {
 
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@
     transition: all 0.3s ease;
 }
 
-.leaderboard-card:hover {
+.leaderboardCard:hover {
 
     transform: translateY(-4px);
 
@@ -46,7 +46,7 @@
         0 8px 22px rgba(0, 0, 0, 0.12);
 }
 
-.rank-circle {
+.rankCircle {
 
     width: 60px;
     height: 60px;
@@ -63,31 +63,31 @@
     font-weight: bold;
 }
 
-.user-info {
+.userInfo {
     flex: 1;
     margin-left: 20px;
 }
 
-.name-row {
+.nameRow {
 
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.name-row h3 {
+.nameRow h3 {
     margin: 0;
     font-size: 18px;
 }
 
-.points-label {
+.pointsLabel {
 
     color: #777;
 
     font-size: 14px;
 }
 
-.points-badge {
+.pointsBadge {
 
     min-width: 110px;
 
@@ -105,7 +105,7 @@
     font-weight: 700;
 }
 
-.you-badge {
+.youBadge {
 
     padding: 5px 12px;
 
@@ -121,7 +121,7 @@
 
 /* Current User */
 
-.current-user {
+.currentUser {
 
     border: 2px solid #ff9800;
 
@@ -169,7 +169,7 @@
     border-left: 6px solid #cd7f32;
 }
 
-.search-box {
+.searchBox {
 
     margin-bottom: 25px;
 
@@ -179,7 +179,7 @@
 
 }
 
-.search-box input {
+.searchBox input {
 
     width: 350px;
 

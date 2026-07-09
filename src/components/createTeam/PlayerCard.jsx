@@ -1,3 +1,4 @@
+import styles from "../../styles/pages/CreateTeam.module.css";
 import {
 
     useDispatch,
@@ -74,11 +75,11 @@ function PlayerCard({ player }) {
 
         <div
 
-            className={`player-card ${selected ? "selected" : ""}`}
+            className={`${styles.playerCard} ${selected ? styles.selected : ""}`}
 
         >
 
-            <div className="player-left">
+            <div className={styles.playerLeft}>
 
                 <input
 
@@ -94,15 +95,15 @@ function PlayerCard({ player }) {
 
             </div>
 
-            <div className="player-info">
+            <div className={styles.playerInfo}>
 
-                <div className="player-name">
+                <div className={styles.playerName}>
 
                     🏏 {player.player_name}
 
                 </div>
 
-                <div className="player-details">
+                <div className={styles.playerDetails}>
 
                     <span>
 
@@ -124,11 +125,11 @@ function PlayerCard({ player }) {
 
                 selected &&
 
-                <div className="player-actions">
+                <div className={styles.playerActions}>
 
                     <button
 
-                        className="captain-btn"
+                        className={styles.captainBtn}
 
                         onClick={() =>
 
@@ -160,7 +161,7 @@ function PlayerCard({ player }) {
 
                     <button
 
-                        className="vc-btn"
+                        className={styles.vcBtn}
 
                         onClick={() =>
 

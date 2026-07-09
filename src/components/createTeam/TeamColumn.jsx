@@ -1,3 +1,4 @@
+import styles from "../../styles/pages/CreateTeam.module.css";
 import PlayerCard from "./PlayerCard";
 
 function TeamColumn({
@@ -10,7 +11,7 @@ function TeamColumn({
 
     return (
 
-        <div className="team-column">
+        <div className={styles.teamColumn}>
 
             <h2>
 

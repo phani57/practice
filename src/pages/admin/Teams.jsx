@@ -1,4 +1,4 @@
-import "../../styles/admin/Teams.css";
+import styles from "../../styles/admin/Teams.module.css";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ import TeamsHeader from "../../components/admin/teams/TeamsHeader";
 import TeamsToolbar from "../../components/admin/teams/TeamsToolbar";
 import TeamsTable from "../../components/admin/teams/TeamsTable";
 import TeamModal from "../../components/admin/teams/TeamModal";
+import ConfirmModal from "../../components/common/ConfirmModal";
 
 function Teams() {
   const firstRender = useRef(true);
@@ -34,6 +35,9 @@ function Teams() {
   const [successMessage, setSuccessMessage] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
+
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+  const [deleteTargetId, setDeleteTargetId] = useState(null);
 
   useEffect(() => {
     loadTeams();
@@ -263,14 +267,19 @@ function Teams() {
     }
   }
 
+  // Open confirm modal for deleting a team
+  function handleDeleteClick(id) {
+    setDeleteTargetId(id);
+    setIsConfirmOpen(true);
+  }
+
   // Delete selected team
-  async function deleteTeam(id) {
-    if (!window.confirm("Delete this team?")) {
-      return;
-    }
+  async function deleteTeam() {
+    setIsConfirmOpen(false);
+    if (!deleteTargetId) return;
 
     try {
-      const response = await teamService.deleteTeam(id);
+      const response = await teamService.deleteTeam(deleteTargetId);
 
       setSuccessMessage(response.message);
 
@@ -289,21 +298,21 @@ function Teams() {
   }
 
   return (
-    <div className="teams-container">
+    <div className={styles.teamsContainer}>
       <TeamsHeader onAddTeam={openCreateModal} />
 
       {successMessage && (
-        <div className="success-message">{successMessage}</div>
+        <div className={styles.successMessage}>{successMessage}</div>
       )}
 
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
 
       <TeamsToolbar searchText={searchText} onSearchChange={onSearchChange} />
 
       <TeamsTable
         teams={paginatedTeams}
         onEdit={editTeam}
-        onDelete={deleteTeam}
+        onDelete={handleDeleteClick}
         onView={viewTeam}
       />
 
@@ -314,6 +323,14 @@ function Teams() {
         editingTeam={editingTeam}
         onClose={closeModal}
         onSave={saveTeam}
+      />
+
+      <ConfirmModal
+        open={isConfirmOpen}
+        title="Delete Team"
+        message="Are you sure you want to delete this team? This action cannot be undone."
+        onConfirm={deleteTeam}
+        onCancel={() => setIsConfirmOpen(false)}
       />
     </div>
   );

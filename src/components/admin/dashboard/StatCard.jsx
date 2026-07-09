@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/Dashboard.module.css";
 function StatCard({
 
     title,
@@ -16,13 +17,13 @@ function StatCard({
 
         <div
 
-            className="stat-card"
+            className={styles.statCard}
 
             onClick={onClick}
 
         >
 
-            <div className="stat-header">
+            <div className={styles.statHeader}>
 
                 <span>
 
@@ -30,7 +31,7 @@ function StatCard({
 
                 </span>
 
-                <span className="stat-icon">
+                <span className={styles.statIcon}>
 
                     {icon}
 

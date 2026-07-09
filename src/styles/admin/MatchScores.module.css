@@ -2,7 +2,7 @@
    PAGE
 ========================================== */
 
-.scores-container{
+.scoresContainer{
 
     color:white;
 }
@@ -11,12 +11,12 @@
    HEADER
 ========================================== */
 
-.page-header{
+.pageHeader{
 
     margin-bottom:30px;
 }
 
-.page-subtitle{
+.pageSubtitle{
 
     margin:0;
 
@@ -31,7 +31,7 @@
     font-weight:700;
 }
 
-.page-title{
+.pageTitle{
 
     margin-top:8px;
 
@@ -46,7 +46,7 @@
    TABLE CARD
 ========================================== */
 
-.table-card{
+.tableCard{
 
     background:#111827;
 
@@ -116,7 +116,7 @@ tbody tr:last-child td{
    SCORE INPUT
 ========================================== */
 
-.score-input{
+.scoreInput{
 
     width:120px;
 
@@ -137,7 +137,7 @@ tbody tr:last-child td{
     transition:.2s;
 }
 
-.score-input:focus{
+.scoreInput:focus{
 
     border-color:#6366f1;
 
@@ -148,7 +148,7 @@ tbody tr:last-child td{
    SAVE BUTTON
 ========================================== */
 
-.save-section{
+.saveSection{
 
     display:flex;
 
@@ -157,7 +157,7 @@ tbody tr:last-child td{
     margin-top:30px;
 }
 
-.save-btn{
+.saveBtn{
 
     background:#4f46e5;
 
@@ -178,7 +178,7 @@ tbody tr:last-child td{
     transition:.25s;
 }
 
-.save-btn:hover{
+.saveBtn:hover{
 
     background:#4338ca;
 }
@@ -189,13 +189,13 @@ tbody tr:last-child td{
 
 @media(max-width:768px){
 
-.page-title{
+.pageTitle{
 
 font-size:28px;
 
 }
 
-.table-card{
+.tableCard{
 
 overflow-x:auto;
 
@@ -207,26 +207,26 @@ min-width:550px;
 
 }
 
-.save-section{
+.saveSection{
 
 justify-content:center;
 
 }
 
-.save-btn{
+.saveBtn{
 
 width:100%;
 
 }
 
-.score-input{
+.scoreInput{
 
 width:100%;
 
 }
 
 }
-.success-message {
+.successMessage {
 
     margin-bottom: 20px;
 
@@ -242,7 +242,7 @@ width:100%;
 
 }
 
-.error-message {
+.errorMessage {
 
     margin-bottom: 20px;
 
@@ -257,7 +257,7 @@ width:100%;
     color: #f87171;
 
 }
-.current-score{
+.currentScore{
 
     display:inline-flex;
 

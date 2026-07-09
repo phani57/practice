@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/Players.module.css";
 import PlayerRow from "./PlayerRow";
 
 function PlayersTable({
@@ -12,7 +13,7 @@ function PlayersTable({
 
     return (
 
-        <div className="table-card">
+        <div className={styles.tableCard}>
 
             <table>
 

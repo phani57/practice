@@ -2,7 +2,7 @@
    DASHBOARD
 ========================================= */
 
-.dashboard-container {
+.dashboardContainer {
 
     background: #0f172a;
 
@@ -13,12 +13,12 @@
    PAGE HEADER
 ========================================= */
 
-.page-header {
+.pageHeader {
 
     margin-bottom: 32px;
 }
 
-.page-subtitle {
+.pageSubtitle {
 
     margin: 0;
 
@@ -33,7 +33,7 @@
     text-transform: uppercase;
 }
 
-.dashboard-title {
+.dashboardTitle {
 
     margin-top: 8px;
 
@@ -48,7 +48,7 @@
    STATS GRID
 ========================================= */
 
-.stats-grid {
+.statsGrid {
 
     display: grid;
 
@@ -63,7 +63,7 @@
    STAT CARD
 ========================================= */
 
-.stat-card {
+.statCard {
 
     background: #111827;
 
@@ -79,7 +79,7 @@
 
 }
 
-.stat-card:hover {
+.statCard:hover {
 
     transform: translateY(-6px);
 
@@ -89,13 +89,13 @@
 
 }
 
-.stat-card:active {
+.statCard:active {
 
     transform: scale(.98);
 
 }
 
-.stat-header {
+.statHeader {
 
     display: flex;
 
@@ -104,7 +104,7 @@
     align-items: center;
 }
 
-.stat-header span:first-child {
+.statHeader span:first-child {
 
     color: #94a3b8;
 
@@ -113,12 +113,12 @@
     font-weight: 600;
 }
 
-.stat-icon {
+.statIcon {
 
     font-size: 22px;
 }
 
-.stat-card h2 {
+.statCard h2 {
 
     margin: 22px 0 10px;
 
@@ -129,7 +129,7 @@
     font-weight: 700;
 }
 
-.stat-card small {
+.statCard small {
 
     color: #64748b;
 
@@ -140,7 +140,7 @@
    MATCH SECTION
 ========================================= */
 
-.match-section {
+.matchSection {
 
     background: #111827;
 
@@ -153,7 +153,7 @@
     margin-top: 30px;
 }
 
-.section-header {
+.sectionHeader {
 
     display: flex;
 
@@ -168,7 +168,7 @@
     border-bottom: 1px solid #334155;
 }
 
-.section-header h2 {
+.sectionHeader h2 {
 
     margin: 0;
 
@@ -183,7 +183,7 @@
    MATCH CARD
 ========================================= */
 
-.match-card {
+.matchCard {
 
     background: #1e293b;
 
@@ -198,12 +198,12 @@
     transition: .25s;
 }
 
-.match-card:last-child {
+.matchCard:last-child {
 
     margin-bottom: 0;
 }
 
-.match-card:hover {
+.matchCard:hover {
 
     border-color: #6366f1;
 
@@ -216,7 +216,7 @@
    MATCH HEADER
 ========================================= */
 
-.match-top {
+.matchTop {
 
     display: flex;
 
@@ -227,7 +227,7 @@
     gap: 20px;
 }
 
-.match-top h3 {
+.matchTop h3 {
 
     margin: 0;
 
@@ -253,7 +253,7 @@
    DATE
 ========================================= */
 
-.match-date {
+.matchDate {
 
     margin-top: 12px;
 
@@ -266,7 +266,7 @@
    LIVE BADGE
 ========================================= */
 
-.live-badge {
+.liveBadge {
 
     background: #16a34a;
 
@@ -287,7 +287,7 @@
    EMPTY STATE
 ========================================= */
 
-.empty-state {
+.emptyState {
 
     padding: 45px;
 
@@ -312,7 +312,7 @@
 
 @media (max-width:1200px){
 
-    .stats-grid{
+    .statsGrid{
 
         grid-template-columns:repeat(2,1fr);
 
@@ -322,25 +322,25 @@
 
 @media (max-width:700px){
 
-    .dashboard-container{
+    .dashboardContainer{
 
         padding:18px;
 
     }
 
-    .dashboard-title{
+    .dashboardTitle{
 
         font-size:28px;
 
     }
 
-    .stats-grid{
+    .statsGrid{
 
         grid-template-columns:1fr;
 
     }
 
-    .match-top{
+    .matchTop{
 
         flex-direction:column;
 
@@ -350,7 +350,7 @@
 
     }
 
-    .section-header{
+    .sectionHeader{
 
         flex-direction:column;
 
@@ -360,7 +360,7 @@
 
     }
 
-    .stat-card h2{
+    .statCard h2{
 
         font-size:34px;
 

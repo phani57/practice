@@ -2,7 +2,7 @@
    HEADER
 ========================================== */
 
-.admin-header{
+.adminHeader{
 
     height:80px;
 
@@ -28,14 +28,14 @@
    LEFT
 ========================================== */
 
-.page-info {
+.pageInfo {
 
     display: flex;
 
     flex-direction: column;
 }
 
-.page-label {
+.pageLabel {
 
     margin: 0;
 
@@ -50,7 +50,7 @@
     font-weight: 700;
 }
 
-.header-left h2 {
+.headerLeft h2 {
 
     margin: 5px 0 0;
 
@@ -65,7 +65,7 @@
    RIGHT
 ========================================== */
 
-.header-right {
+.headerRight {
 
     display: flex;
 
@@ -78,7 +78,7 @@
    PROFILE
 ========================================== */
 
-.admin-profile {
+.adminProfile {
 
     display: flex;
 
@@ -118,14 +118,14 @@
     font-weight: 700;
 }
 
-.admin-info {
+.adminInfo {
 
     display: flex;
 
     flex-direction: column;
 }
 
-.admin-name {
+.adminName {
 
     color: white;
 
@@ -134,7 +134,7 @@
     font-weight: 600;
 }
 
-.admin-role {
+.adminRole {
 
     color: #94a3b8;
 
@@ -145,7 +145,7 @@
    LOGOUT
 ========================================== */
 
-.logout-btn {
+.logoutBtn {
 
     background: #ef4444;
 
@@ -166,7 +166,7 @@
     transition: .25s;
 }
 
-.logout-btn:hover {
+.logoutBtn:hover {
 
     background: #dc2626;
 }
@@ -177,7 +177,7 @@
 
 @media (max-width:768px){
 
-.admin-header{
+.adminHeader{
 
 height:auto;
 
@@ -191,7 +191,7 @@ gap:18px;
 
 }
 
-.header-right{
+.headerRight{
 
 width:100%;
 
@@ -199,13 +199,13 @@ justify-content:space-between;
 
 }
 
-.admin-profile{
+.adminProfile{
 
 flex:1;
 
 }
 
-.header-left h2{
+.headerLeft h2{
 
 font-size:20px;
 

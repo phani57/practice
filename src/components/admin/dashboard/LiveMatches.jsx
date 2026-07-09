@@ -1,10 +1,11 @@
+import styles from "../../../styles/admin/Dashboard.module.css";
 function LiveMatches({ liveMatches }) {
 
     return (
 
-        <div className="match-section">
+        <div className={styles.matchSection}>
 
-            <div className="section-header">
+            <div className={styles.sectionHeader}>
 
                 <h2>
 
@@ -26,17 +27,17 @@ function LiveMatches({ liveMatches }) {
 
                             key={match.id}
 
-                            className="match-card"
+                            className={styles.matchCard}
 
                         >
 
-                            <div className="match-top">
+                            <div className={styles.matchTop}>
 
                                 <h3>
 
                                     {match.team1.team_name}
 
-                                    <span className="vs">
+                                    <span className={styles.vs}>
 
                                         {" "}VS{" "}
 
@@ -46,7 +47,7 @@ function LiveMatches({ liveMatches }) {
 
                                 </h3>
 
-                                <span className="live-badge">
+                                <span className={styles.liveBadge}>
 
                                     LIVE
 
@@ -60,7 +61,7 @@ function LiveMatches({ liveMatches }) {
 
                     :
 
-                    <div className="empty-state">
+                    <div className={styles.emptyState}>
 
                         No Live Matches
 

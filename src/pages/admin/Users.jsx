@@ -1,4 +1,4 @@
-import "../../styles/admin/Users.css";
+import styles from "../../styles/admin/Users.module.css";
 import { useEffect, useState } from "react";
 import userService from "../../services/admin/userService";
 
@@ -112,23 +112,23 @@ function Users() {
 
     return (
 
-        <div className="users-container">
+        <div className={styles.usersContainer}>
 
             {/* ==========================
                 PAGE HEADER
             ========================== */}
 
-            <div className="page-header">
+            <div className={styles.pageHeader}>
 
                 <div>
 
-                    <p className="page-subtitle">
+                    <p className={styles.pageSubtitle}>
 
                         User Management
 
                     </p>
 
-                    <h1 className="page-title">
+                    <h1 className={styles.pageTitle}>
 
                         Registered Users
 
@@ -140,11 +140,11 @@ function Users() {
 
             {/* SEARCH */}
 
-            <div className="toolbar">
+            <div className={styles.toolbar}>
 
                 <input
 
-                    className="search-box"
+                    className={styles.searchBox}
 
                     type="text"
 
@@ -160,7 +160,7 @@ function Users() {
 
             {/* TABLE */}
 
-            <div className="table-card">
+            <div className={styles.tableCard}>
 
                 <table>
 
@@ -198,7 +198,7 @@ function Users() {
 
                                             colSpan="6"
 
-                                            className="empty-state"
+                                            className={styles.emptyState}
 
                                         >
 
@@ -288,11 +288,11 @@ function Users() {
 
             {/* PAGINATION */}
 
-            <div className="pagination">
+            <div className={styles.pagination}>
 
                 <button
 
-                    className="page-btn"
+                    className={styles.pageBtn}
 
                     onClick={previousPage}
 
@@ -316,7 +316,7 @@ function Users() {
 
                 <button
 
-                    className="page-btn"
+                    className={styles.pageBtn}
 
                     onClick={nextPage}
 

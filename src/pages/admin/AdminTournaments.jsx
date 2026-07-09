@@ -1,4 +1,4 @@
-import "../../styles/admin/AdminTournaments.css";
+import styles from "../../styles/admin/AdminTournaments.module.css";
 
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,7 @@ import TournamentsHeader from "../../components/admin/tournaments/TournamentsHea
 import TournamentsToolbar from "../../components/admin/tournaments/TournamentsToolbar";
 import TournamentsTable from "../../components/admin/tournaments/TournamentsTable";
 import TournamentModal from "../../components/admin/tournaments/TournamentModal";
+import ConfirmModal from "../../components/common/ConfirmModal";
 
 function AdminTournaments() {
   const navigate = useNavigate();
@@ -34,6 +35,9 @@ function AdminTournaments() {
   const [successMessage, setSuccessMessage] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
+
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+  const [deleteTargetId, setDeleteTargetId] = useState(null);
 
   useEffect(() => {
     loadTournaments();
@@ -140,14 +144,19 @@ function AdminTournaments() {
     setShowModal(true);
   }
 
+  // Open confirm modal for deleting a tournament
+  function handleDeleteClick(id) {
+    setDeleteTargetId(id);
+    setIsConfirmOpen(true);
+  }
+
   // Delete selected tournament
-  async function deleteTournament(id) {
-    if (!window.confirm("Delete Tournament?")) {
-      return;
-    }
+  async function deleteTournament() {
+    setIsConfirmOpen(false);
+    if (!deleteTargetId) return;
 
     try {
-      const response = await tournamentService.deleteTournament(id);
+      const response = await tournamentService.deleteTournament(deleteTargetId);
 
       setSuccessMessage(response.message);
 
@@ -249,14 +258,14 @@ function AdminTournaments() {
     setCurrentPage(1);
   }
   return (
-    <div className="tournaments-container">
+    <div className={styles.tournamentsContainer}>
       <TournamentsHeader onAddTournament={openCreateModal} />
 
       {successMessage && (
-        <div className="success-message">{successMessage}</div>
+        <div className={styles.successMessage}>{successMessage}</div>
       )}
 
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
 
       <TournamentsToolbar
         searchText={searchText}
@@ -266,13 +275,13 @@ function AdminTournaments() {
       <TournamentsTable
         tournaments={paginatedTournaments}
         onEdit={editTournament}
-        onDelete={deleteTournament}
+        onDelete={handleDeleteClick}
         onView={viewTournament}
       />
 
-      <div className="pagination">
+      <div className={styles.pagination}>
         <button
-          className="page-btn"
+          className={styles.pageBtn}
           onClick={previousPage}
           disabled={currentPage === 1}
         >
@@ -284,7 +293,7 @@ function AdminTournaments() {
         </span>
 
         <button
-          className="page-btn"
+          className={styles.pageBtn}
           onClick={nextPage}
           disabled={currentPage === totalPages}
         >
@@ -299,6 +308,14 @@ function AdminTournaments() {
         editingTournament={editingTournament}
         onClose={closeModal}
         onSave={saveTournament}
+      />
+
+      <ConfirmModal
+        open={isConfirmOpen}
+        title="Delete Tournament"
+        message="Are you sure you want to delete this tournament? This action cannot be undone."
+        onConfirm={deleteTournament}
+        onCancel={() => setIsConfirmOpen(false)}
       />
     </div>
   );

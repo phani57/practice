@@ -1,4 +1,4 @@
-import "../styles/pages/MyTeams.css";
+import styles from "../styles/pages/MyTeams.module.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TeamCard from "../components/MyTeamsCard";
@@ -6,6 +6,7 @@ import TeamCard from "../components/MyTeamsCard";
 import { useDispatch } from "react-redux";
 import { setEditingTeam } from "../redux/teamSlice";
 import fantasyTeamService from "../services/fantasyTeamService";
+import ConfirmModal from "../components/common/ConfirmModal";
 
 function MyTeams() {
 
@@ -13,7 +14,10 @@ function MyTeams() {
 
     const [savedTeams, setSavedTeams] = useState([]);
 
-    const [expandedTeamId, setExpandedTeamId] = useState(-1);
+    const [viewingTeam, setViewingTeam] = useState(null);
+
+    const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+    const [deleteTargetId, setDeleteTargetId] = useState(null);
 
     const dispatch = useDispatch();
 
@@ -43,52 +47,33 @@ function MyTeams() {
 
 
 
-    function toggleTeam(teamId) {
-
-        if (expandedTeamId === teamId) {
-
-            setExpandedTeamId(-1);
-
-        }
-
-        else {
-
-            setExpandedTeamId(teamId);
-
-        }
-
+    function viewTeam(teamId) {
+        const team = savedTeams.find(t => t.id === teamId);
+        setViewingTeam(team);
     }
 
-    async function deleteTeam(teamId) {
+    function closeModal() {
+        setViewingTeam(null);
+    }
 
-        const confirmed = window.confirm(
-            "Are you sure you want to delete this team?"
-        );
+    // Open confirm modal for deleting a team
+    function handleDeleteClick(teamId) {
+        setDeleteTargetId(teamId);
+        setIsConfirmOpen(true);
+    }
 
-        if (!confirmed) return;
+    async function deleteTeam() {
+        setIsConfirmOpen(false);
+        if (!deleteTargetId) return;
 
         try {
-
-            await fantasyTeamService.deleteTeam(teamId);
-
+            await fantasyTeamService.deleteTeam(deleteTargetId);
             setSavedTeams(previousTeams =>
-
-                previousTeams.filter(
-
-                    team => team.id !== teamId
-
-                )
-
+                previousTeams.filter(team => team.id !== deleteTargetId)
             );
-
-        }
-
-        catch (error) {
-
+        } catch (error) {
             console.log(error);
-
         }
-
     }
 
     async function editTeam(teamId) {
@@ -115,9 +100,9 @@ function MyTeams() {
 
         <>
 
-            <div className="teams-container">
+            <div className={styles.teamsContainer}>
 
-                <div className="page-header">
+                <div className={styles.pageHeader}>
 
                     <div>
 
@@ -137,7 +122,7 @@ function MyTeams() {
 
                 </div>
 
-                <div className="teams-grid">
+                <div className={styles.teamsGrid}>
 
                     {
 
@@ -149,13 +134,9 @@ function MyTeams() {
 
                                 team={team}
 
-                                expanded={
-                                    expandedTeamId === team.id
-                                }
+                                onView={viewTeam}
 
-                                onToggle={toggleTeam}
-
-                                onDelete={deleteTeam}
+                                onDelete={handleDeleteClick}
 
                                 onEdit={editTeam}
 
@@ -168,6 +149,40 @@ function MyTeams() {
                 </div>
 
             </div>
+
+            {viewingTeam && (
+                <div className={styles.modalOverlay} onClick={closeModal}>
+                    <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
+                        <div className={styles.modalHeader}>
+                            <h3>Selected Players ({viewingTeam.team_name})</h3>
+                            <button className={styles.closeBtn} onClick={closeModal}>X</button>
+                        </div>
+                        <div className={styles.playersGrid}>
+                            {viewingTeam.players.map(player => (
+                                <div key={player.id} className={styles.playerCard}>
+                                    <span>{player.player_name}</span>
+                                    <div className={styles.badges}>
+                                        {player.pivot.is_captain === 1 && (
+                                            <span className={styles.captain}>C</span>
+                                        )}
+                                        {player.pivot.is_vice_captain === 1 && (
+                                            <span className={styles.vice}>VC</span>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            <ConfirmModal
+                open={isConfirmOpen}
+                title="Delete Team"
+                message="Are you sure you want to delete this team? This action cannot be undone."
+                onConfirm={deleteTeam}
+                onCancel={() => setIsConfirmOpen(false)}
+            />
 
         </>
 

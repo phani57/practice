@@ -2,7 +2,7 @@
 BACKGROUND
 =========================*/
 
-.dashboard-container{
+.dashboardContainer{
 
     padding:30px;
 
@@ -17,7 +17,7 @@ BACKGROUND
    HERO
 ==================================== */
 
-.hero-banner{
+.heroBanner{
 
     display:flex;
 
@@ -39,9 +39,11 @@ BACKGROUND
 
     position:relative;
 
+    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.2);
+
 }
 
-.hero-banner::after{
+.heroBanner::after{
 
     content:"";
 
@@ -61,13 +63,13 @@ BACKGROUND
 
 }
 
-.hero-content{
+.heroContent{
 
     z-index:2;
 
 }
 
-.welcome-text{
+.welcomeText{
 
     display:inline-block;
 
@@ -83,7 +85,7 @@ BACKGROUND
 
 }
 
-.hero-banner h1{
+.heroBanner h1{
 
     margin:0;
 
@@ -93,7 +95,7 @@ BACKGROUND
 
 }
 
-.hero-banner p{
+.heroBanner p{
 
     margin-top:12px;
 
@@ -103,7 +105,7 @@ BACKGROUND
 
 }
 
-.hero-trophy{
+.heroTrophy{
 
     font-size:90px;
 
@@ -115,7 +117,7 @@ BACKGROUND
    STATS
 ==================================== */
 
-.stats-container{
+.statsContainer{
 
     display:grid;
 
@@ -127,7 +129,7 @@ BACKGROUND
 
 }
 
-.stat-card{
+.statCard{
 
     display:flex;
 
@@ -147,19 +149,19 @@ BACKGROUND
 
     overflow:hidden;
 
-    box-shadow:0 12px 30px rgba(0,0,0,.06);
+    box-shadow:0 8px 25px rgba(0,0,0,.04);
 
 }
 
-.stat-card:hover{
+.statCard:hover{
 
     transform:translateY(-6px);
 
-    box-shadow:0 18px 35px rgba(37,99,235,.15);
+    box-shadow:0 18px 40px rgba(37,99,235,.12);
 
 }
 
-.stat-card::before{
+.statCard::before{
 
     content:"";
 
@@ -193,7 +195,7 @@ BACKGROUND
 
 }
 
-.stat-icon{
+.statIcon{
 
     width:70px;
 
@@ -213,19 +215,19 @@ BACKGROUND
 
 }
 
-.matches .stat-icon{
+.matches .statIcon{
 
     background:#ecfdf5;
 
 }
 
-.rank .stat-icon{
+.rank .statIcon{
 
     background:#fff7ed;
 
 }
 
-.stat-title{
+.statTitle{
 
     color:#6b7280;
 
@@ -235,7 +237,7 @@ BACKGROUND
 
 }
 
-.stat-card h2{
+.statCard h2{
 
     margin:8px 0 5px;
 
@@ -245,7 +247,7 @@ BACKGROUND
 
 }
 
-.stat-card small{
+.statCard small{
 
     color:#9ca3af;
 
@@ -255,7 +257,7 @@ BACKGROUND
 SECTION
 =========================*/
 
-.section-card{
+.sectionCard{
 
     background:white;
 
@@ -269,7 +271,7 @@ SECTION
 
 }
 
-.section-title{
+.sectionTitle{
 
     font-size:22px;
 
@@ -285,7 +287,7 @@ SECTION
 MATCH CARD
 =========================*/
 
-.match-card{
+.matchCard{
 
     display:flex;
 
@@ -307,7 +309,7 @@ MATCH CARD
 
 }
 
-.match-card:hover{
+.matchCard:hover{
 
     transform:translateY(-3px);
 
@@ -327,7 +329,7 @@ MATCH CARD
 
 }
 
-.match-middle{
+.matchMiddle{
 
     width:30%;
 
@@ -335,7 +337,7 @@ MATCH CARD
 
 }
 
-.live-badge{
+.liveBadge{
 
     background:#16a34a;
 
@@ -361,7 +363,7 @@ MATCH CARD
 
 }
 
-.match-middle small{
+.matchMiddle small{
 
     color:#6b7280;
 
@@ -371,7 +373,7 @@ MATCH CARD
 EMPTY
 =========================*/
 
-.empty-card{
+.emptyCard{
 
     text-align:center;
 
@@ -389,8 +391,8 @@ EMPTY
 MESSAGE
 =========================*/
 
-.alert-card,
-.loading-card{
+.alertCard,
+.loadingCard{
 
     background:white;
 
@@ -404,7 +406,7 @@ MESSAGE
 
 }
 
-.alert-card{
+.alertCard{
 
     border-left:5px solid #ef4444;
 
@@ -415,7 +417,7 @@ MESSAGE
 
 @media (max-width:900px){
 
-.hero-card{
+.heroCard{
 
 flex-direction:column;
 
@@ -425,7 +427,7 @@ gap:20px;
 
 }
 
-.hero-icon{
+.heroIcon{
 
 display:none;
 
@@ -439,7 +441,7 @@ display:none;
 
 @media (max-width:900px){
 
-.stats-grid{
+.statsGrid{
 
 grid-template-columns:1fr;
 
@@ -475,7 +477,7 @@ text-align:right;
 
 }
 
-.match-card:last-child{
+.matchCard:last-child{
 
 margin-bottom:0;
 
@@ -485,7 +487,7 @@ margin-bottom:0;
    SECTION HEADER
 =========================================== */
 
-.section-title{
+.sectionTitle{
 
 display:flex;
 

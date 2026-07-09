@@ -1,4 +1,4 @@
-import "../styles/pages/Tournaments.css";
+import styles from "../styles/pages/Tournaments.module.css";
 import  { useState, useEffect } from "react";
 import TournamentCard from "../components/TournamentCard";
 import tournamentService from "../services/tournamentService";
@@ -44,9 +44,9 @@ function Tournaments() {
 
         <div>
 
-            <div className="tournaments-container">
+            <div className={styles.tournamentsContainer}>
 
-                <div className="page-header">
+                <div className={styles.pageHeader}>
 
                     <div>
 
@@ -66,9 +66,9 @@ function Tournaments() {
 
                 </div>
 
-                <div className="header-stats">
+                <div className={styles.headerStats}>
 
-                    <div className="mini-card">
+                    <div className={styles.miniCard}>
 
                         <span>🏆</span>
 
@@ -90,7 +90,7 @@ function Tournaments() {
 
                     </div>
 
-                    <div className="mini-card">
+                    <div className={styles.miniCard}>
 
                         <span>🔥</span>
 
@@ -116,7 +116,7 @@ function Tournaments() {
 
                     </div>
 
-                    <div className="mini-card">
+                    <div className={styles.miniCard}>
 
                         <span>📅</span>
 
@@ -144,7 +144,7 @@ function Tournaments() {
 
                 </div>
 
-                <div className="tournaments-grid">
+                <div className={styles.tournamentsGrid}>
 
                     {
                         tournaments.map((tournament) => (

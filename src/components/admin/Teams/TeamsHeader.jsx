@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/Teams.module.css";
 function TeamsHeader({
 
     onAddTeam
@@ -6,17 +7,17 @@ function TeamsHeader({
 
     return (
 
-        <div className="page-header">
+        <div className={styles.pageHeader}>
 
             <div>
 
-                <p className="page-subtitle">
+                <p className={styles.pageSubtitle}>
 
                     Team Management
 
                 </p>
 
-                <h1 className="page-title">
+                <h1 className={styles.pageTitle}>
 
                     Teams
 
@@ -26,7 +27,7 @@ function TeamsHeader({
 
             <button
 
-                className="primary-btn"
+                className={styles.primaryBtn}
 
                 onClick={onAddTeam}
 

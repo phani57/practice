@@ -1,7 +1,7 @@
 /* ===========================================
    PAGE
 =========================================== */
-.page-container {
+.pageContainer {
 
     max-width: 1400px;
 
@@ -15,7 +15,7 @@
 
 }
 
-.page-container h1 {
+.pageContainer h1 {
 
     margin-bottom: 6px;
 
@@ -23,7 +23,7 @@
 
 }
 
-.match-info {
+.matchInfo {
 
     color: #64748b;
 
@@ -35,7 +35,7 @@
    SUMMARY CARD
 =========================================== */
 
-.summary-card {
+.summaryCard {
 
     background: #ffffff;
 
@@ -55,13 +55,13 @@
    TEAM NAME
 =========================================== */
 
-.team-name-section {
+.teamNameSection {
 
     margin-bottom: 20px;
 
 }
 
-.team-name-section label {
+.teamNameSection label {
 
     display: block;
 
@@ -75,7 +75,7 @@
 
 }
 
-.team-name-section input {
+.teamNameSection input {
 
     width: 100%;
 
@@ -97,7 +97,7 @@
 
 }
 
-.team-name-section input:focus {
+.teamNameSection input:focus {
 
     border-color: #2563eb;
 
@@ -108,7 +108,7 @@
 /* ===========================================
    PROGRESS
 =========================================== */
-.progress-section {
+.progressSection {
 
     display: flex;
 
@@ -120,7 +120,7 @@
 
 }
 
-.progress-section h2 {
+.progressSection h2 {
 
     margin: 0;
 
@@ -130,7 +130,7 @@
 
 }
 
-.player-count {
+.playerCount {
 
     background: #2563eb;
 
@@ -161,7 +161,7 @@
 
 }
 
-.leader-card {
+.leaderCard {
 
     border: 1px solid #e5e7eb;
 
@@ -173,7 +173,7 @@
 
 }
 
-.leader-card span {
+.leaderCard span {
 
     display: block;
 
@@ -185,7 +185,7 @@
 
 }
 
-.leader-card strong {
+.leaderCard strong {
 
     font-size: 15px;
 
@@ -196,7 +196,7 @@
 /* ===========================================
    SAVE BUTTON
 =========================================== */
-.save-btn {
+.saveBtn {
 
     width: 100%;
 
@@ -220,7 +220,7 @@
 
 }
 
-.save-btn:hover {
+.saveBtn:hover {
 
     background: #15803d;
 
@@ -230,7 +230,7 @@
    PLAYERS GRID
 =========================================== */
 
-.players-grid {
+.playersGrid {
 
     display: grid;
 
@@ -240,7 +240,7 @@
 
 }
 
-.team-column {
+.teamColumn {
 
     background: #ffffff;
 
@@ -254,7 +254,7 @@
 
 }
 
-.team-column h2 {
+.teamColumn h2 {
 
     margin: 0 0 16px;
 
@@ -271,7 +271,7 @@
 /* ===========================================
    PLAYER CARD
 =========================================== */
-.player-card {
+.playerCard {
 
     display: flex;
 
@@ -293,7 +293,7 @@
 
 }
 
-.player-card:hover {
+.playerCard:hover {
 
     border-color: #2563eb;
 
@@ -301,7 +301,7 @@
 
 }
 
-.player-card.selected {
+.playerCard.selected {
 
     border-color: #2563eb;
 
@@ -313,7 +313,7 @@
    PLAYER INFO
 =========================================== */
 
-.player-left {
+.playerLeft {
 
     display: flex;
 
@@ -321,7 +321,7 @@
 
 }
 
-.player-left input {
+.playerLeft input {
 
     width: 20px;
 
@@ -331,13 +331,13 @@
 
 }
 
-.player-info {
+.playerInfo {
 
     flex: 1;
 
 }
 
-.player-name {
+.playerName {
 
     font-size: 16px;
 
@@ -349,7 +349,7 @@
 
 }
 
-.player-details {
+.playerDetails {
 
     display: flex;
 
@@ -365,7 +365,7 @@
    ACTION BUTTONS
 =========================================== */
 
-.player-actions {
+.playerActions {
 
     display: flex;
 
@@ -375,7 +375,7 @@
 
 }
 
-.player-actions button {
+.playerActions button {
 
     border: none;
 
@@ -393,7 +393,7 @@
 
 }
 
-.captain-btn {
+.captainBtn {
 
     background: #2563eb;
 
@@ -401,13 +401,13 @@
 
 }
 
-.captain-btn:hover {
+.captainBtn:hover {
 
     background: #1d4ed8;
 
 }
 
-.vc-btn {
+.vcBtn {
 
     background: #7c3aed;
 
@@ -415,7 +415,7 @@
 
 }
 
-.vc-btn:hover {
+.vcBtn:hover {
 
     background: #6d28d9;
 
@@ -425,7 +425,7 @@
    MESSAGES
 =========================================== */
 
-.error-message {
+.errorMessage {
 
     margin: 18px 0;
 
@@ -441,7 +441,7 @@
 
 }
 
-.success-message {
+.successMessage {
 
     margin: 18px 0;
 
@@ -463,7 +463,7 @@
 
 @media(max-width:1000px) {
 
-    .players-grid {
+    .playersGrid {
 
         grid-template-columns: 1fr;
 
@@ -479,22 +479,24 @@
 
 @media(max-width:600px) {
 
-    .page-container {
+    .pageContainer {
 
         padding: 18px;
 
     }
 
-    .summary-card {
+    .summaryCard {
 
         position: static;
 
     }
 
-    .progress-section {
+    .progressSection {
 
         flex-direction: column;
 
         align-items: flex-start;
 
         gap: 12px;
+}
+}

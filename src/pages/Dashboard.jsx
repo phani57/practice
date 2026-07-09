@@ -1,4 +1,4 @@
-import "../styles/pages/Dashboard.css";
+import styles from "../styles/pages/Dashboard.module.css";
 import { useEffect, useState } from "react";
 import dashboardService from "../services/dashboardService";
 
@@ -60,13 +60,13 @@ function Dashboard() {
 
     return (
 
-        <div className="dashboard-container">
+        <div className={styles.dashboardContainer}>
 
-            <div className="hero-banner">
+            <div className={styles.heroBanner}>
 
-                <div className="hero-content">
+                <div className={styles.heroContent}>
 
-                    <span className="welcome-text">
+                    <span className={styles.welcomeText}>
 
                         Welcome Back 👋
 
@@ -86,7 +86,7 @@ function Dashboard() {
 
                 </div>
 
-                <div className="hero-trophy">
+                <div className={styles.heroTrophy}>
 
                     🏆
 
@@ -98,7 +98,7 @@ function Dashboard() {
 
                 loading && (
 
-                    <div className="loading-card">
+                    <div className={styles.loadingCard}>
 
                         Loading Dashboard...
 
@@ -112,7 +112,7 @@ function Dashboard() {
 
                 errorMessage && (
 
-                    <div className="alert-card">
+                    <div className={styles.alertCard}>
 
                         {errorMessage}
 
@@ -128,11 +128,11 @@ function Dashboard() {
 
                 <>
 
-                    <div className="stats-container">
+                    <div className={styles.statsContainer}>
 
-                        <div className="stat-card teams">
+                        <div className={`${styles.statCard} ${styles.teams}`}>
 
-                            <div className="stat-icon">
+                            <div className={styles.statIcon}>
 
                                 👥
 
@@ -140,7 +140,7 @@ function Dashboard() {
 
                             <div>
 
-                                <div className="stat-title">
+                                <div className={styles.statTitle}>
 
                                     My Teams
 
@@ -162,9 +162,9 @@ function Dashboard() {
 
                         </div>
 
-                        <div className="stat-card matches">
+                        <div className={`${styles.statCard} ${styles.matches}`}>
 
-                            <div className="stat-icon">
+                            <div className={styles.statIcon}>
 
                                 ⚽
 
@@ -172,7 +172,7 @@ function Dashboard() {
 
                             <div>
 
-                                <div className="stat-title">
+                                <div className={styles.statTitle}>
 
                                     Matches Joined
 
@@ -194,9 +194,9 @@ function Dashboard() {
 
                         </div>
 
-                        <div className="stat-card rank">
+                        <div className={`${styles.statCard} ${styles.rank}`}>
 
-                            <div className="stat-icon">
+                            <div className={styles.statIcon}>
 
                                 🥇
 
@@ -204,7 +204,7 @@ function Dashboard() {
 
                             <div>
 
-                                <div className="stat-title">
+                                <div className={styles.statTitle}>
 
                                     Global Rank
 
@@ -228,9 +228,9 @@ function Dashboard() {
 
                     </div>
 
-                    <div className="section-card">
+                    <div className={styles.sectionCard}>
 
-                        <div className="section-title">
+                        <div className={styles.sectionTitle}>
 
                             🔴 Live Matches
 
@@ -242,7 +242,7 @@ function Dashboard() {
 
                                 (
 
-                                    <div className="empty-card">
+                                    <div className={styles.emptyCard}>
 
                                         No Live Matches
 
@@ -256,27 +256,27 @@ function Dashboard() {
 
                                     <div
 
-                                        className="match-card"
+                                        className={styles.matchCard}
 
                                         key={match.id}
 
                                     >
 
-                                        <div className="team">
+                                        <div className={styles.team}>
 
                                             {match.team1?.team_name}
 
                                         </div>
 
-                                        <div className="match-middle">
+                                        <div className={styles.matchMiddle}>
 
-                                            <div className="vs">
+                                            <div className={styles.vs}>
 
                                                 VS
 
                                             </div>
 
-                                            <span className="live-badge">
+                                            <span className={styles.liveBadge}>
 
                                                 LIVE
 
@@ -284,7 +284,7 @@ function Dashboard() {
 
                                         </div>
 
-                                        <div className="team">
+                                        <div className={styles.team}>
 
                                             {match.team2?.team_name}
 
@@ -298,9 +298,9 @@ function Dashboard() {
 
                     </div>
 
-                    <div className="section-card">
+                    <div className={styles.sectionCard}>
 
-                        <div className="section-title">
+                        <div className={styles.sectionTitle}>
 
                             📅 Upcoming Matches
 
@@ -312,7 +312,7 @@ function Dashboard() {
 
                                 (
 
-                                    <div className="empty-card">
+                                    <div className={styles.emptyCard}>
 
                                         No Upcoming Matches
 
@@ -326,21 +326,21 @@ function Dashboard() {
 
                                     <div
 
-                                        className="match-card upcoming"
+                                        className={`${styles.matchCard} ${styles.upcoming}`}
 
                                         key={match.id}
 
                                     >
 
-                                        <div className="team">
+                                        <div className={styles.team}>
 
                                             {match.team1?.team_name}
 
                                         </div>
 
-                                        <div className="match-middle">
+                                        <div className={styles.matchMiddle}>
 
-                                            <div className="vs">
+                                            <div className={styles.vs}>
 
                                                 VS
 
@@ -354,7 +354,7 @@ function Dashboard() {
 
                                         </div>
 
-                                        <div className="team">
+                                        <div className={styles.team}>
 
                                             {match.team2?.team_name}
 

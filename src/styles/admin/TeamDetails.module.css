@@ -2,7 +2,7 @@
    PAGE
 ========================================== */
 
-.team-details {
+.teamDetails {
 
     color: white;
 }
@@ -11,7 +11,7 @@
    HEADER
 ========================================== */
 
-.page-header {
+.pageHeader {
 
     display: flex;
 
@@ -22,7 +22,7 @@
     margin-bottom: 28px;
 }
 
-.page-subtitle {
+.pageSubtitle {
 
     margin: 0;
 
@@ -37,7 +37,7 @@
     font-weight: 700;
 }
 
-.page-title {
+.pageTitle {
 
     margin-top: 8px;
 
@@ -52,7 +52,7 @@
    BACK BUTTON
 ========================================== */
 
-.back-btn {
+.backBtn {
 
     background: #334155;
 
@@ -73,7 +73,7 @@
     transition: .25s;
 }
 
-.back-btn:hover {
+.backBtn:hover {
 
     background: #475569;
 }
@@ -82,7 +82,7 @@
    INFO CARD
 ========================================== */
 
-.info-card {
+.infoCard {
 
     background: #111827;
 
@@ -95,7 +95,7 @@
     margin-bottom: 30px;
 }
 
-.info-item {
+.infoItem {
 
     display: flex;
 
@@ -104,14 +104,14 @@
     gap: 8px;
 }
 
-.info-item span {
+.infoItem span {
 
     color: #94a3b8;
 
     font-size: 13px;
 }
 
-.info-item strong {
+.infoItem strong {
 
     color: white;
 
@@ -124,7 +124,7 @@
    TABLE
 ========================================== */
 
-.table-card {
+.tableCard {
 
     background: #111827;
 
@@ -192,7 +192,7 @@ tbody tr:last-child td {
 
 @media (max-width:768px){
 
-.page-header{
+.pageHeader{
 
 flex-direction:column;
 
@@ -202,7 +202,7 @@ gap:18px;
 
 }
 
-.table-card{
+.tableCard{
 
 overflow-x:auto;
 
@@ -214,13 +214,13 @@ min-width:600px;
 
 }
 
-.page-title{
+.pageTitle{
 
 font-size:28px;
 
 }
 
-.info-card{
+.infoCard{
 
 padding:20px;
 

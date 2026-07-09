@@ -1,4 +1,4 @@
-import "../../styles/admin/Dashboard.css";
+import styles from "../../styles/admin/Dashboard.module.css";
 import { useEffect, useState } from "react";
 
 import adminDashboardService from "../../services/admin/adminDashboardService";
@@ -57,7 +57,7 @@ function Dashboard() {
 
     return (
 
-        <div className="dashboard-container">
+        <div className={styles.dashboardContainer}>
 
             <DashboardHeader />
 

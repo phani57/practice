@@ -1,4 +1,4 @@
-import "../../styles/admin/TeamDetails.css";
+import styles from "../../styles/admin/TeamDetails.module.css";
 
 import { useEffect, useState } from "react";
 
@@ -35,28 +35,28 @@ function TeamDetails() {
   }
 
   return (
-    <div className="team-details">
-      <div className="page-header">
+    <div className={styles.teamDetails}>
+      <div className={styles.pageHeader}>
         <div>
-          <p className="page-subtitle">Team Details</p>
+          <p className={styles.pageSubtitle}>Team Details</p>
 
-          <h1 className="page-title">{team?.team_name}</h1>
+          <h1 className={styles.pageTitle}>{team?.team_name}</h1>
         </div>
 
-        <button className="back-btn" onClick={goBack}>
+        <button className={styles.backBtn} onClick={goBack}>
           ← Back
         </button>
       </div>
 
-      <div className="info-card">
-        <div className="info-item">
+      <div className={styles.infoCard}>
+        <div className={styles.infoItem}>
           <span>Total Players</span>
 
           <strong>{team?.players?.length}</strong>
         </div>
       </div>
 
-      <div className="table-card">
+      <div className={styles.tableCard}>
         <table>
           <thead>
             <tr>

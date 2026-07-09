@@ -1,4 +1,4 @@
-import "../styles/pages/Matches.css";
+import styles from "../styles/pages/Matches.module.css";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import matchService from "../services/matchService";
@@ -47,7 +47,7 @@ function Matches() {
 
         <>
 
-            <div className="matches-container">
+            <div className={styles.matchesContainer}>
 
                 <h1>
 
@@ -60,16 +60,16 @@ function Matches() {
 
                         <div
                             key={match.id}
-                            className="match-card"
+                            className={styles.matchCard}
                         >
 
-                            <div className="match-header">
+                            <div className={styles.matchHeader}>
 
                                 <h2>
 
                                     {match.team1.team_name}
 
-                                    <span className="vs">
+                                    <span className={styles.vs}>
 
                                         VS
 
@@ -80,7 +80,7 @@ function Matches() {
                                 </h2>
 
                                 <span
-                                    className={`status-badge ${match.status.toLowerCase()}`}
+                                    className={`${styles.statusBadge} ${styles[match.status.toLowerCase()] || ''}`}
                                 >
 
                                     {match.status}
@@ -89,7 +89,7 @@ function Matches() {
 
                             </div>
 
-                            <p className="date">
+                            <p className={styles.date}>
 
                                 📅 {match.match_date}
 
@@ -102,7 +102,7 @@ function Matches() {
 
                                     <button
 
-                                        className="create-team-btn"
+                                        className={styles.createTeamBtn}
 
                                         onClick={() =>
                                             createTeam(match.id)
@@ -122,7 +122,7 @@ function Matches() {
 
                                         <button
                                             disabled
-                                            className="live-btn"
+                                            className={styles.liveBtn}
                                         >
 
                                             Match Live
@@ -133,7 +133,7 @@ function Matches() {
 
                                         <button
                                             disabled
-                                            className="closed-btn"
+                                            className={styles.closedBtn}
                                         >
 
                                             Completed
@@ -150,7 +150,7 @@ function Matches() {
                 {
                     matches.length === 0 &&
 
-                    <div className="empty-state">
+                    <div className={styles.emptyState}>
 
                         No Matches Found
 

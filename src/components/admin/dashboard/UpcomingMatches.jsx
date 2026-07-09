@@ -1,10 +1,11 @@
+import styles from "../../../styles/admin/Dashboard.module.css";
 function UpcomingMatches({ upcomingMatches }) {
 
     return (
 
-        <div className="match-section">
+        <div className={styles.matchSection}>
 
-            <div className="section-header">
+            <div className={styles.sectionHeader}>
 
                 <h2>
 
@@ -26,17 +27,17 @@ function UpcomingMatches({ upcomingMatches }) {
 
                             key={match.id}
 
-                            className="match-card"
+                            className={styles.matchCard}
 
                         >
 
-                            <div className="match-top">
+                            <div className={styles.matchTop}>
 
                                 <h3>
 
                                     {match.team1.team_name}
 
-                                    <span className="vs">
+                                    <span className={styles.vs}>
 
                                         {" "}VS{" "}
 
@@ -48,7 +49,7 @@ function UpcomingMatches({ upcomingMatches }) {
 
                             </div>
 
-                            <p className="match-date">
+                            <p className={styles.matchDate}>
 
                                 {
 
@@ -68,7 +69,7 @@ function UpcomingMatches({ upcomingMatches }) {
 
                     :
 
-                    <div className="empty-state">
+                    <div className={styles.emptyState}>
 
                         No Upcoming Matches
 

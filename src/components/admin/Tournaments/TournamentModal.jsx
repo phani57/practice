@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/AdminTournaments.module.css";
 import { useEffect, useState } from "react";
 
 function TournamentModal({
@@ -126,12 +127,12 @@ function TournamentModal({
   }
 
   return (
-    <div className="modal-backdrop">
-      <div className="modal-card">
+    <div className={styles.modalBackdrop}>
+      <div className={styles.modalCard}>
         <h2>{isEditMode ? "Edit Tournament" : "Add Tournament"}</h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          <div className={styles.formGroup}>
             <label>Tournament Name</label>
 
             <input
@@ -142,7 +143,7 @@ function TournamentModal({
             />
           </div>
 
-          <div className="form-group">
+          <div className={styles.formGroup}>
             <label>Start Date</label>
 
             <input
@@ -153,7 +154,7 @@ function TournamentModal({
             />
           </div>
 
-          <div className="form-group">
+          <div className={styles.formGroup}>
             <label>End Date</label>
 
             <input
@@ -164,10 +165,10 @@ function TournamentModal({
             />
           </div>
 
-          <div className="form-group">
+          <div className={styles.formGroup}>
             <label>Select Teams</label>
 
-            <div className="teams-list">
+            <div className={styles.teamsList}>
               {teams.map((team) => (
                 <label
                   key={team.id}
@@ -184,16 +185,16 @@ function TournamentModal({
                     onChange={handleTeamChange}
                   />
 
-                  <span className="team-name">{team.team_name}</span>
+                  <span className={styles.teamName}>{team.team_name}</span>
                 </label>
               ))}
             </div>
           </div>
 
-          <div className="modal-buttons">
+          <div className={styles.modalButtons}>
             <button
               type="button"
-              className="cancel-btn"
+              className={styles.cancelBtn}
               onClick={() => {
                 localStorage.removeItem("tournamentModalDraft");
 
@@ -203,7 +204,7 @@ function TournamentModal({
               Cancel
             </button>
 
-            <button type="submit" className="save-btn">
+            <button type="submit" className={styles.saveBtn}>
               {isEditMode ? "Update Tournament" : "Save Tournament"}
             </button>
           </div>

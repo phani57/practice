@@ -1,4 +1,4 @@
-import "../styles/pages/Profile.css";
+import styles from "../styles/pages/Profile.module.css";
 import { useEffect, useState } from "react";
 import profileService from "../services/profileService";
 
@@ -41,13 +41,13 @@ function Profile() {
         <>
 
 
-            <div className="profile-container">
+            <div className={styles.profileContainer}>
 
-                <div className="profile-card">
+                <div className={styles.profileCard}>
 
-                    <div className="profile-header">
+                    <div className={styles.profileHeader}>
 
-                        <div className="profile-avatar">
+                        <div className={styles.profileAvatar}>
 
                             {profile.name.charAt(0).toUpperCase()}
 
@@ -67,9 +67,9 @@ function Profile() {
 
                     </div>
 
-                    <div className="profile-stats-grid">
+                    <div className={styles.profileStatsGrid}>
 
-                        <div className="profile-stat-card">
+                        <div className={styles.profileStatCard}>
 
                             <h3>
 
@@ -85,7 +85,7 @@ function Profile() {
 
                         </div>
 
-                        <div className="profile-stat-card">
+                        <div className={styles.profileStatCard}>
 
                             <h3>
 

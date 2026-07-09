@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/Teams.module.css";
 function TeamsToolbar({
 
     searchText,
@@ -8,11 +9,11 @@ function TeamsToolbar({
 
     return (
 
-        <div className="toolbar">
+        <div className={styles.toolbar}>
 
             <input
 
-                className="search-box"
+                className={styles.searchBox}
 
                 type="text"
 

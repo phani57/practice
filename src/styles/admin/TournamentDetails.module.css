@@ -2,7 +2,7 @@
    PAGE
 ========================================== */
 
-.details-container {
+.detailsContainer {
 
     color: white;
 
@@ -12,7 +12,7 @@
    PAGE HEADER
 ========================================== */
 
-.page-header {
+.pageHeader {
 
     display: flex;
 
@@ -23,7 +23,7 @@
     margin-bottom: 28px;
 }
 
-.page-subtitle {
+.pageSubtitle {
 
     margin: 0;
 
@@ -38,7 +38,7 @@
     font-weight: 700;
 }
 
-.page-title {
+.pageTitle {
 
     margin-top: 8px;
 
@@ -53,7 +53,7 @@
    INFO CARD
 ========================================== */
 
-.info-card {
+.infoCard {
 
     background: #111827;
 
@@ -70,7 +70,7 @@
     margin-bottom: 30px;
 }
 
-.info-item {
+.infoItem {
 
     display: flex;
 
@@ -79,14 +79,14 @@
     gap: 8px;
 }
 
-.info-item span {
+.infoItem span {
 
     color: #94a3b8;
 
     font-size: 13px;
 }
 
-.info-item strong {
+.infoItem strong {
 
     color: white;
 
@@ -125,7 +125,7 @@
    STATUS BADGE
 ========================================== */
 
-.status-badge {
+.statusBadge {
 
     display: inline-flex;
 
@@ -176,7 +176,7 @@
     gap: 12px;
 }
 
-.team-chip {
+.teamChip {
 
     background: #312e81;
 
@@ -191,7 +191,7 @@
     transition: .25s;
 }
 
-.team-chip:hover {
+.teamChip:hover {
 
     background: #4338ca;
 }
@@ -200,7 +200,7 @@
    FORM
 ========================================== */
 
-.match-form {
+.matchForm {
 
     display: grid;
 
@@ -209,14 +209,14 @@
     gap: 20px;
 }
 
-.form-group {
+.formGroup {
 
     display: flex;
 
     flex-direction: column;
 }
 
-.form-group label {
+.formGroup label {
 
     margin-bottom: 8px;
 
@@ -225,8 +225,8 @@
     font-size: 14px;
 }
 
-.form-group input,
-.form-group select {
+.formGroup input,
+.formGroup select {
 
     background: #1e293b;
 
@@ -243,13 +243,13 @@
     font-size: 14px;
 }
 
-.form-group input:focus,
-.form-group select:focus {
+.formGroup input:focus,
+.formGroup select:focus {
 
     border-color: #6366f1;
 }
 
-.match-form button {
+.matchForm button {
 
     grid-column: 1 / -1;
 
@@ -262,11 +262,11 @@
    BUTTONS
 ========================================== */
 
-.primary-btn,
-.secondary-btn,
-.edit-btn,
-.delete-btn,
-.view-btn {
+.primaryBtn,
+.secondaryBtn,
+.editBtn,
+.deleteBtn,
+.viewBtn {
 
     border: none;
 
@@ -285,52 +285,52 @@
     transition: .25s;
 }
 
-.primary-btn {
+.primaryBtn {
 
     background: #4f46e5;
 }
 
-.primary-btn:hover {
+.primaryBtn:hover {
 
     background: #4338ca;
 }
 
-.secondary-btn {
+.secondaryBtn {
 
     background: #0f766e;
 }
 
-.secondary-btn:hover {
+.secondaryBtn:hover {
 
     background: #115e59;
 }
 
-.edit-btn {
+.editBtn {
 
     background: #2563eb;
 }
 
-.edit-btn:hover {
+.editBtn:hover {
 
     background: #1d4ed8;
 }
 
-.delete-btn {
+.deleteBtn {
 
     background: #dc2626;
 }
 
-.delete-btn:hover {
+.deleteBtn:hover {
 
     background: #b91c1c;
 }
 
-.view-btn {
+.viewBtn {
 
     background: #16a34a;
 }
 
-.view-btn:hover {
+.viewBtn:hover {
 
     background: #15803d;
 }
@@ -339,7 +339,7 @@
    TABLE
 ========================================== */
 
-.table-wrapper {
+.tableWrapper {
 
     overflow-x: auto;
 }
@@ -404,7 +404,7 @@ tbody tr:hover {
 
 @media (max-width:900px){
 
-.page-header{
+.pageHeader{
 
 flex-direction:column;
 
@@ -414,7 +414,7 @@ gap:20px;
 
 }
 
-.info-card{
+.infoCard{
 
 flex-direction:column;
 
@@ -422,13 +422,13 @@ gap:20px;
 
 }
 
-.match-form{
+.matchForm{
 
 grid-template-columns:1fr;
 
 }
 
-.match-form button{
+.matchForm button{
 
 grid-column:auto;
 
@@ -440,7 +440,7 @@ width:100%;
 
 @media (max-width:700px){
 
-.page-title{
+.pageTitle{
 
 font-size:28px;
 
@@ -465,7 +465,7 @@ min-width:900px;
 }
 
 }
-.success-message{
+.successMessage{
 
     margin-bottom:16px;
 
@@ -481,7 +481,7 @@ min-width:900px;
 
 }
 
-.validation-error{
+.validationError{
 
     margin-bottom:16px;
 

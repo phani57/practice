@@ -1,13 +1,14 @@
+import styles from "../../../styles/admin/AdminTournaments.module.css";
 function TournamentsHeader({ onAddTournament }) {
   return (
-    <div className="page-header">
+    <div className={styles.pageHeader}>
       <div>
-        <p className="page-subtitle">Tournament Management</p>
+        <p className={styles.pageSubtitle}>Tournament Management</p>
 
-        <h1 className="page-title">Tournaments</h1>
+        <h1 className={styles.pageTitle}>Tournaments</h1>
       </div>
 
-      <button className="primary-btn" onClick={onAddTournament}>
+      <button className={styles.primaryBtn} onClick={onAddTournament}>
         + Add Tournament
       </button>
     </div>

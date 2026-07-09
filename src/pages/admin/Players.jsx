@@ -1,4 +1,4 @@
-import "../../styles/admin/Players.css";
+import styles from "../../styles/admin/Players.module.css";
 
 import { useEffect, useState } from "react";
 
@@ -7,6 +7,7 @@ import PlayersHeader from "../../components/admin/players/PlayersHeader";
 import PlayersToolbar from "../../components/admin/players/PlayersToolbar";
 import PlayersTable from "../../components/admin/players/PlayersTable";
 import PlayerModal from "../../components/admin/players/PlayerModal";
+import ConfirmModal from "../../components/common/ConfirmModal";
 function Players() {
 
     const [players, setPlayers] = useState([]);
@@ -26,6 +27,10 @@ function Players() {
     const [successMessage, setSuccessMessage] = useState("");
 
     const [errorMessage, setErrorMessage] = useState("");
+
+    const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+
+    const [deleteTargetId, setDeleteTargetId] = useState(null);
 
     useEffect(() => {
 
@@ -86,27 +91,18 @@ function Players() {
 
     }
 
-    async function deletePlayer(id) {
+    // Open confirm modal for deleting a player
+    function handleDeleteClick(id) {
+        setDeleteTargetId(id);
+        setIsConfirmOpen(true);
+    }
 
-        if (
-
-            !window.confirm(
-
-                "Are you sure?"
-
-            )
-
-        ) {
-
-            return;
-
-        }
+    async function deletePlayer() {
+        setIsConfirmOpen(false);
+        if (!deleteTargetId) return;
 
         try {
-
-            const response =
-
-                await playerService.deletePlayer(id);
+            const response = await playerService.deletePlayer(deleteTargetId);
 
             setSuccessMessage(
 
@@ -344,7 +340,7 @@ function Players() {
 
     return (
 
-        <div className="players-container">
+        <div className={styles.playersContainer}>
 
             <PlayersHeader
 
@@ -355,7 +351,7 @@ function Players() {
 
                 successMessage && (
 
-                    <div className="success-message">
+                    <div className={styles.successMessage}>
 
                         {successMessage}
 
@@ -369,7 +365,7 @@ function Players() {
 
                 errorMessage && (
 
-                    <div className="error-message">
+                    <div className={styles.errorMessage}>
 
                         {errorMessage}
 
@@ -393,14 +389,14 @@ function Players() {
 
                 onEdit={editPlayer}
 
-                onDelete={deletePlayer}
+                onDelete={handleDeleteClick}
 
             />
-            <div className="pagination">
+            <div className={styles.pagination}>
 
                 <button
 
-                    className="page-btn"
+                    className={styles.pageBtn}
 
                     onClick={previousPage}
 
@@ -420,7 +416,7 @@ function Players() {
 
                 <button
 
-                    className="page-btn"
+                    className={styles.pageBtn}
 
                     onClick={nextPage}
 
@@ -451,6 +447,14 @@ function Players() {
 
                 onSave={savePlayer}
 
+            />
+
+            <ConfirmModal
+                open={isConfirmOpen}
+                title="Delete Player"
+                message="Are you sure you want to delete this player? This action cannot be undone."
+                onConfirm={deletePlayer}
+                onCancel={() => setIsConfirmOpen(false)}
             />
 
         </div>

@@ -1,4 +1,4 @@
-import "../styles/components/Navbar.css";
+import styles from "../styles/components/Navbar.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
@@ -35,15 +35,15 @@ function Navbar() {
     }
     return (
 
-        <nav className="navbar">
+        <nav className={styles.navbar}>
 
-            <div className="logo">
+            <div className={styles.logo}>
 
                 <NavLink to="/dashboard">
 
-                    <span className="logo-icon">🏆</span>
+                    <span className={styles.logoIcon}>🏆</span>
 
-                    <span className="logo-text">
+                    <span className={styles.logoText}>
                         Fantasy League
                     </span>
 
@@ -51,7 +51,7 @@ function Navbar() {
 
             </div>
 
-            <div className="menu">
+            <div className={styles.menu}>
 
                 <NavLink
                     to="/dashboard"
@@ -90,30 +90,30 @@ function Navbar() {
 
             </div>
 
-            <div className="right-section">
+            <div className={styles.rightSection}>
 
                 {user && (
 
                     <>
-                        <div className="info-card points">
+                        <div className={`${styles.infoCard} ${styles.points}`}>
 
-                            <span className="label">
+                            <span className={styles.label}>
                                 Points
                             </span>
 
-                            <span className="value">
+                            <span className={styles.value}>
                                 🏆 {user.fantasy_points}
                             </span>
 
                         </div>
 
-                        <div className="info-card wallet">
+                        <div className={`${styles.infoCard} ${styles.wallet}`}>
 
-                            <span className="label">
+                            <span className={styles.label}>
                                 Wallet
                             </span>
 
-                            <span className="value">
+                            <span className={styles.value}>
                                 ₹{user.wallet_balance}
                             </span>
 
@@ -124,7 +124,7 @@ function Navbar() {
                 )}
 
                 <button
-                    className="logout-btn"
+                    className={styles.logoutBtn}
                     onClick={logout}
                 >
                     Logout

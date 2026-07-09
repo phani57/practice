@@ -1,4 +1,4 @@
-import "../styles/pages/Register.css";
+import styles from "../styles/pages/Register.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../services/authService";
@@ -119,11 +119,11 @@ function Register() {
 
     return (
 
-        <div className="auth-container">
+        <div className={styles.authContainer}>
 
-            <div className="auth-card">
+            <div className={styles.authCard}>
 
-                <div className="logo">
+                <div className={styles.logo}>
 
                     🏆
 
@@ -135,7 +135,7 @@ function Register() {
 
                 </h1>
 
-                <p className="subtitle">
+                <p className={styles.subtitle}>
 
                     Join Fantasy League and start managing tournaments
 
@@ -195,7 +195,7 @@ function Register() {
 
                         errorMessage &&
 
-                        <p className="error">
+                        <p className={styles.error}>
 
                             {errorMessage}
 
@@ -207,7 +207,7 @@ function Register() {
 
                         successMessage &&
 
-                        <div className="success-message">
+                        <div className={styles.successMessage}>
 
                             {successMessage}
 
@@ -239,7 +239,7 @@ function Register() {
 
                     </button>
 
-                    <p className="auth-link">
+                    <p className={styles.authLink}>
 
                         Already have an account?
 

@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/TournamentDetails.module.css";
 import { useEffect, useState } from "react";
 
 function MatchForm({
@@ -87,19 +88,19 @@ function MatchForm({
   }
 
   return (
-    <div className="card">
+    <div className={styles.card}>
       <h2>{isEditMode ? "Edit Match" : "Create Match"}</h2>
 
       {validationMessage && (
-        <div className="validation-error">{validationMessage}</div>
+        <div className={styles.validationError}>{validationMessage}</div>
       )}
 
       {successMessage && (
-        <div className="success-message">{successMessage}</div>
+        <div className={styles.successMessage}>{successMessage}</div>
       )}
 
-      <form className="match-form" onSubmit={handleSubmit}>
-        <div className="form-group">
+      <form className={styles.matchForm} onSubmit={handleSubmit}>
+        <div className={styles.formGroup}>
           <label>Team 1</label>
 
           <select name="team1_id" value={form.team1_id} onChange={handleChange}>
@@ -113,7 +114,7 @@ function MatchForm({
           </select>
         </div>
 
-        <div className="form-group">
+        <div className={styles.formGroup}>
           <label>Team 2</label>
 
           <select name="team2_id" value={form.team2_id} onChange={handleChange}>
@@ -127,7 +128,7 @@ function MatchForm({
           </select>
         </div>
 
-        <div className="form-group">
+        <div className={styles.formGroup}>
           <label>Match Date</label>
 
           <input
@@ -138,7 +139,7 @@ function MatchForm({
           />
         </div>
 
-        <button className="primary-btn" type="submit">
+        <button className={styles.primaryBtn} type="submit">
           {isEditMode ? "Update Match" : "Create Match"}
         </button>
       </form>

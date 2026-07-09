@@ -1,3 +1,4 @@
+import styles from "../../../styles/admin/Players.module.css";
 function PlayerRow({
 
     player,
@@ -36,11 +37,11 @@ function PlayerRow({
 
             </td>
 
-            <td className="actions">
+            <td className={styles.actions}>
 
                 <button
 
-                    className="edit-btn"
+                    className={styles.editBtn}
 
                     onClick={() =>
 
@@ -56,7 +57,7 @@ function PlayerRow({
 
                 <button
 
-                    className="delete-btn"
+                    className={styles.deleteBtn}
 
                     onClick={() =>
 

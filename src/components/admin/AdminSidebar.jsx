@@ -51,7 +51,7 @@ function AdminSidebar() {
 
                 </NavLink>
 
-                <NavLink to="/admin/AdminTournaments">
+                <NavLink to="/admin/tournaments">
 
                     <span className={styles.icon}>
 
@@ -126,6 +126,22 @@ function AdminSidebar() {
                     <span>
 
                         Leaderboard
+
+                    </span>
+
+                </NavLink>
+
+                <NavLink to="/admin/AdminAnnouncement">
+
+                    <span className={styles.icon}>
+
+                        📢
+
+                    </span>
+
+                    <span>
+
+                        Announcements
 
                     </span>
 

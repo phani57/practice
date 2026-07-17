@@ -12,8 +12,24 @@ const getDashboardStats = async () => {
 
 };
 
+//practice --sample data from api
+async function getExternalUsers() {
+
+    const token = localStorage.getItem("token");
+
+    const response = await api.get(
+        "/external-users",
+        {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }
+    );
+
+    return response.data;
+}
 export default {
 
-    getDashboardStats
-
+    getDashboardStats,
+    getExternalUsers
 };

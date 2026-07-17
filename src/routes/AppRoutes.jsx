@@ -27,6 +27,7 @@ import TournamentDetails from "../pages/admin/TournamentDetails";
 import MatchPlayers from "../pages/admin/MatchPlayers";
 import MatchScores from "../pages/admin/MatchScores";
 import MatchLeaderboard from "../pages/admin/MatchLeaderboard";
+import AdminAnnouncement from "../pages/admin/AdminAnnouncement";
 
 function AppRoutes() {
   return (
@@ -77,11 +78,13 @@ function AppRoutes() {
         <Route path="global-leaderboard" element={<GlobalLeaderboard />} />
         <Route path="teams" element={<Teams />} />
         <Route path="teams/:id" element={<TeamDetails />} />
-        <Route path="AdminTournaments" element={<AdminTournaments />} />
+        <Route path="tournaments" element={<AdminTournaments />} />
         <Route path="tournaments/:id" element={<TournamentDetails />} />
         <Route path="matches/:id/players" element={<MatchPlayers />} />
         <Route path="matches/:id/scores" element={<MatchScores />} />
         <Route path="matches/:id/leaderboard" element={<MatchLeaderboard />} />
+
+        <Route path="AdminAnnouncement" element={<AdminAnnouncement />} />
       </Route>
     </Routes>
   );

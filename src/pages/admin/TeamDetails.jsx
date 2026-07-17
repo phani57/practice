@@ -1,9 +1,6 @@
 import styles from "../../styles/admin/TeamDetails.module.css";
-
 import { useEffect, useState } from "react";
-
 import { useNavigate, useParams } from "react-router-dom";
-
 import teamService from "../../services/admin/teamService";
 
 function TeamDetails() {
@@ -12,6 +9,7 @@ function TeamDetails() {
   const navigate = useNavigate();
 
   const [team, setTeam] = useState(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // Load selected team details
   useEffect(() => {
@@ -34,6 +32,85 @@ function TeamDetails() {
     navigate("/admin/teams");
   }
 
+  /**
+   * Invokes the teamService to retrieve the team player CSV data as a Blob,
+   * generates a temporary local Object URL, and programmatically clicks a hidden anchor
+   * element to save the file. Releases the temporary Object URL afterward.
+   */
+  async function downloadCsv() {
+    try {
+      const response = await teamService.downloadTeamCsv(id);
+
+      const url = window.URL.createObjectURL(response.data);
+
+      const link = document.createElement("a");
+
+      link.href = url;
+
+      link.setAttribute("download", `${team.team_name}.csv`);
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      link.remove();
+
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const handleDownloadExcel = async (id) => {
+    try {
+      const response = await teamService.downloadTeamExcel(id);
+
+      const blob = new Blob([response.data]);
+
+      const url = window.URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+
+      link.href = url;
+
+      link.download = "players.xlsx";
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      document.body.removeChild(link);
+
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  async function downloadPdf() {
+    try {
+      const response = await teamService.downloadTeamPdf(id);
+
+      const url = window.URL.createObjectURL(response.data);
+
+      const link = document.createElement("a");
+
+      link.href = url;
+
+      link.setAttribute("download", `${team.team_name}.pdf`);
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      link.remove();
+
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className={styles.teamDetails}>
       <div className={styles.pageHeader}>
@@ -43,9 +120,51 @@ function TeamDetails() {
           <h1 className={styles.pageTitle}>{team?.team_name}</h1>
         </div>
 
-        <button className={styles.backBtn} onClick={goBack}>
-          ← Back
-        </button>
+        <div className={styles.headerActions}>
+          <div className={styles.dropdownContainer}>
+            <button
+              className={styles.dropdownTrigger}
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+            >
+              Download ↓
+            </button>
+            {dropdownOpen && (
+              <div className={styles.dropdownMenu}>
+                <button
+                  className={styles.dropdownItem}
+                  onClick={() => {
+                    downloadCsv();
+                    setDropdownOpen(false);
+                  }}
+                >
+                  Download CSV
+                </button>
+                <button
+                  className={styles.dropdownItem}
+                  onClick={() => {
+                    handleDownloadExcel(team?.id);
+                    setDropdownOpen(false);
+                  }}
+                >
+                  Download Excel
+                </button>
+                <button
+                  className={styles.dropdownItem}
+                  onClick={() => {
+                    downloadPdf();
+                    setDropdownOpen(false);
+                  }}
+                >
+                  Download PDF
+                </button>
+              </div>
+            )}
+          </div>
+
+          <button className={styles.backBtn} onClick={goBack}>
+            ← Back
+          </button>
+        </div>
       </div>
 
       <div className={styles.infoCard}>
